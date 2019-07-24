@@ -1,0 +1,25 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.left{
+    background-color: aquamarine;
+    font-style: italic;
+    padding: 150px;
+    width: 70%;
+    float: left;
+   }
+.right{background-color: darkslategray;
+    font-style: normal; 
+    padding: 150px;
+    width: 30%;
+    float: left;
+   }
+.bottom{
+    position: absolute;
+    bottom: 25%;
+    background-color: rosybrown;
+    padding: 100px 0;
+    width: 100%;
+}

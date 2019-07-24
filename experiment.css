@@ -1,0 +1,21 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.left{
+    background-color: aquamarine;
+    font-style: italic;
+    width: 50%;
+    float: left;
+}
+.right{
+    background-color: darkslategray;
+    font-style: normal; 
+    width: 50%;
+    float: left;
+}
+.bottom{
+    background-color: rosybrown;
+    width: 100%;
+}
