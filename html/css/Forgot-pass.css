@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0%;
+}
+body{
+    padding: 20px;
+    background-color: #F6F8F9;
+}
+.all{
+    background-color: #FFFFFF;
+    border-radius: 3%;
+    padding: 10%;
+    margin: auto 0;   
+    height: 90%;
+    width: 80%;     
+}
+.box{
+    background-color: #FFFFFF;
+    margin: auto ;  
+}
+.remember-me{
+    float: left;
+}
+.forgot-pass{
+    float: right;
+}
+legand {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 1cm;
+    text-decoration-line: underline;
+    margin-bottom: 10px;
+    }
+#fieldset{
+    border: 0px;
+    width: 50%;
+    height: 60%;
+    margin: auto;    
+}
+.triangle-up {
+    color: #BF574A;
+}
+#tb{
+    width: 60%;
+    height: 30px;
+    border-radius: 10%;
+}
+#tbp{
+    width: 60%;
+    height: 30px;
+    border-radius: 10%;
+}
+.button{
+    border-radius: 25%;
+    width: 3cm;
+    height: 30px;
+    background-color: #0C7EF1;
+    -webkit-text-fill-color: aliceblue; 
+}
