@@ -6,22 +6,51 @@
 body{
     background-color: #F6F8F9;
 }
-.BurgerMenu {
-  width: 35px;
-  height: 5px;
-  background-color: #747474;
-  margin: 6px 0;
-}
-.topbar{ 
-    width: 100%;    
-    height: 45px;
+.topbar{
+    display: flex; 
+    align-items: center;
     background-color: #FFFFFF;
-    padding: 45px;
-    }
-.img{
-    float: left;
-    padding: 0px;
+    padding: 10px;
+    justify-content: space-between;    
 }
-.name{
-    padding: 8px;
+.right{
+    display: flex;
+    margin-right: 30px;
+    align-items: center;  
+}
+.request-bar{
+    display: flex; 
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 30px;
+    justify-content: space-between;
+    margin: 10px;    
+}
+.search-bar{
+    border-radius: 25px;
+    border: 3px solid #B5B5B5;
+    width: 600px;
+    padding: 10px;  
+  }
+.search-bar input{
+    border: none;
+    outline: none;
+    }
+.txt{
+    line-height: 30px;
+    border-bottom: solid #32BDD2;
+}
+.search-bar img{
+    float: right;
+    position: relative;
+}
+.new-request input{
+    border-radius: 25px;
+    width: 150px;
+    padding: 10px;
+    background-color: #0C7EF1;
+    -webkit-text-fill-color: aliceblue;
+}
+.fa fa-search{
+    border: solid grey;
 }
