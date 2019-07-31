@@ -19,17 +19,19 @@ body{
     align-items: center;  
 }
 .request-bar{
+    box-shadow: 0px 2px 2px #DFEBEF;
     display: flex; 
     align-items: center;
     background-color: #FFFFFF;
     padding: 30px;
     justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
     margin-bottom: 5px;    
 }
 .search-bar{
+    box-shadow: 0px 2px 2px 2px #DFEBEF;
     border-radius: 25px;
     border: 3px solid #B5B5B5;
     width: 600px;
@@ -51,17 +53,18 @@ body{
     border-radius: 25px;
     width: 150px;
     padding: 10px;
-    background-color: #0C7EF1;
+    background-color: #32BDD2;
     -webkit-text-fill-color: aliceblue;
 }
 .filter-bar{
+    box-shadow: 0px 2px 2px #DFEBEF;
     display: flex; 
     align-items: center;
     background-color: #FFFFFF;
     padding: 5px;
     justify-content: flex-start;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
     margin-top: 5px;
     margin-bottom: 2px;
 }
@@ -70,15 +73,53 @@ body{
     align-items: center;
     margin: 20px;
 }
-
 .request-list{
+    box-shadow: 0px 0px 2px #DFEBEF;
     display: flex; 
     align-items: center;
     background-color: #FFFFFF;
     padding: 10px;
     justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 1px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
     margin-bottom: 2px;
 }
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+.dropdown-content {
+    display: none;
+    left: 73em;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px; 
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .showmore{
+        display: flex;
+        align-items: center;
+        padding: 30px;
+        justify-content: center;
+        background-color: #FFFFFF;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0px 2px 2px #DFEBEF;
+  }
