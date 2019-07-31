@@ -71,7 +71,9 @@ body{
 .right-text{
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin-left: 20px;
+    width: 200px;
+    justify-content: flex-end;
 }
 .request-list{
     box-shadow: 0px 0px 2px #DFEBEF;
