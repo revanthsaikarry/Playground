@@ -24,7 +24,10 @@ body{
     background-color: #FFFFFF;
     padding: 30px;
     justify-content: space-between;
-    margin: 10px;    
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;    
 }
 .search-bar{
     border-radius: 25px;
@@ -50,4 +53,32 @@ body{
     padding: 10px;
     background-color: #0C7EF1;
     -webkit-text-fill-color: aliceblue;
+}
+.filter-bar{
+    display: flex; 
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 5px;
+    justify-content: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+.right-text{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.request-list{
+    display: flex; 
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 10px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 1px;
+    margin-bottom: 2px;
 }
