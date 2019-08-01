@@ -88,6 +88,9 @@ body{
     margin-top: 0px;
     margin-bottom: 2px;
 }
+.middle-img{
+    margin-left:35px;
+}
 .dropdown {
     float: left;
     overflow: hidden;
