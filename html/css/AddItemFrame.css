@@ -1,0 +1,22 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-color: #000000;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+.topbar{
+    display: flex;
+    background-color: #FCFCFC;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+    width: 700px;
+    box-shadow: 25px 25px 0px 0px #000000;
+}
