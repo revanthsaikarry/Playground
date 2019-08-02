@@ -174,7 +174,32 @@ body{
     padding: 40px;
 }
 .bottom-txt{
-    margin-top: 180px;
+    margin-top: 150px;
+    padding: 20px;
     display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.Item-list-content{
+    width: 100%;
+}
+.Item-head{
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background-color: #F0F0F0;
+    justify-content: space-between;
+    width: 100%;
+}
+.Add-item{
+    display: flex;
+    align-items: center;
+    /* margin-left: 750px; */
+}
+.Item-discription{
+    display: flex;
+    padding: 20px;
+    align-items: center;
     justify-content: space-between;
 }
