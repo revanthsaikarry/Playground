@@ -4,6 +4,16 @@
 <head>
     <title>Login-Page</title>
     <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script>
+    function init()
+    {
+        location.href = "LoginButtonResponsepage.html"; 
+    }
+        console.log(init);
+        console.log(Element);
+                    console.log(MouseEvent);
+                    console.log(location);
+        </script>
 </head>
 
 <body class="bdy">
@@ -26,7 +36,7 @@
                     <a href="login.html">forgot password?</a>
                 </div><br><br><br>
                 <div class="login">
-                    <button class="button" type="submit">Login</button>
+                    <button class="button" type="submit" onclick="init()">Login</button>
                 </div>
             </div>
         </div>

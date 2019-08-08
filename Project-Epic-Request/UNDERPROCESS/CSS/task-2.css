@@ -11,7 +11,7 @@
     /* display: inline-block; */
     margin: 20PX;
     /* overflow: auto; */
-    width: 1550px;
+    width: 90%;
     background-color: #FFFFFF;
     margin: 0 auto;
     display: -webkit-inline-box; 
@@ -46,7 +46,6 @@
     }
     .filter-bar{
         /* position: absolute; */
-        display: -webkit-box;
         box-shadow: 0px 2px 2px #DFEBEF;
         background-color: #FFFFFF;
         padding: 5px;
@@ -57,7 +56,6 @@
         }
         .request-list{
             box-shadow: 0px 0px 2px #DFEBEF;
-            display: -webkit-box;
             background-color: #FFFFFF;
             padding: 10px;
             margin-left: 30px;
