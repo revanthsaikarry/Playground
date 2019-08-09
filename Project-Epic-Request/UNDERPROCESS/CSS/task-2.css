@@ -11,10 +11,9 @@
     /* display: inline-block; */
     margin: 20PX;
     /* overflow: auto; */
-    width: 90%;
     background-color: #FFFFFF;
     margin: 0 auto;
-    display: -webkit-inline-box; 
+    /* display: -webkit-inline-box;  */
 }
 .search-bar{
     border-radius: 25px;
@@ -34,7 +33,7 @@
         position: relative;
     }
     .new-request input{
-        float: right;
+        /* float: right; */
         border-radius: 25px;
         width: 150px;
         padding: 10px;

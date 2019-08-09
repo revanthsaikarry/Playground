@@ -10,6 +10,7 @@
 <body>
 
         <table class="topbar" width="100%">
+            <tr>
             <th style="float: left; margin-left:15px;"><img src="../IMAGES/request-assets-png/icons/request-icons-02.png" height="35" width="35" alt="Burger-menu"
                 style="margin-left: 20px;"></th>
             <!-- <div class="right"> -->
@@ -27,42 +28,49 @@
                         <a href="#">Logout</a>
                     </div> -->
             <!-- </div> -->
-        </table>
+        </tr></table>
     
-    <table class="request-bar" width="800px">
-       <th>
-            <span style="font-family: 'Roboto';font-weight: 500; line-height: 35px; border-bottom: solid #32BDD2; position: absolute; margin-left: 25px;">My Requests</span>
+    <div class="request-bar" width="100%">
+       <table>
+        <th>
+            <span style="font-family: 'Roboto';font-weight: 500; line-height: 35px; border-bottom: solid #32BDD2; position: absolute; margin-left: 25px; float: left; margin-bottom: 10px;">My Requests</span>
         </th>
-       <th class="search-bar">
-            <input type="text" placeholder="search..." />
+        <th>
+       <div class="search-bar" style="position: absolute; margin-left: 300px;  margin-bottom: 5px;">
+            <input type="text" placeholder="search..." style="float: left;"/>
             <img src="../IMAGES/request-assets-png/icons/request-icons-03.png" height="20" width="22" alt="Search-icon" style="margin-right: 10px;" />
+        </div>
         </th> 
-        <th class="new-request" style="float: right;">
+        <th class="new-request" style="float: right; margin-left: 1150px;">
             <input type="button" value="New Request" style="margin-right: 20px;">
         </th>
     </table>
-    <div class="filter-bar">
-        <img src="../IMAGES/request-assets-png/icons/request-icons-01.png" height="33" width="35" alt="filter-bar" style="margin: 20px" />
-        <div class="text" style="margin: 20px 0px 0px 0px;">
-            <p style="color: #5A5A5A; font-weight: 400;">FILTER</p>
-            <p style="color: #505050; font-weight: 700; font-size: 10px">Showing approved Requests...</p>
-        </div>
     </div>
-    <div class="request-list">
-        <div style="margin: 20px">
-            <span style="color: #5A5A5A; font-size: 14px; font-weight: 500">PUR - 2019 - 056</span><br><br>
-            <span style="color: #505050; font-size: 12px; font-weight: 400;">Submitted on</span><br>
-            <span style="color: #5A5A5A; font-size: 14px; font-weight: 500">06 Jul 2019</span>
+    <table class="filter-bar">
+        <th><img src="../IMAGES/request-assets-png/icons/request-icons-01.png" height="33" width="35" alt="filter-bar" style="margin: 20px" /></th>
+        <th class="text" style="margin: 20px 0px 0px 0px;">
+            <p style="color: #5A5A5A; font-weight: 400; float: left; margin-right: 1162px;">FILTER</p><br>
+            <p style="color: #505050; font-weight: 700; font-size: 10px; float: left;">Showing approved Requests...</p>
+        </th>
+    </table>
+    <table class="request-list" width= 1000px;>
+        <tr>
+        <th style="margin: 20px" width="150px">
+            <div>
+            <p style="color: #5A5A5A; font-size: 14px; font-weight: 500;">PUR-2019-056</p><br><br>
+            <p style="color: #505050; font-size: 12px; font-weight: 400;">Submitted&nbsp;on</p><br>
+            <p style="color: #5A5A5A; font-size: 14px; font-weight: 500">06&nbsp;Jul&nbsp;2019</p>
         </div>
-        <div class="middle-img">
+        </th>
+        <th class="middle-img" width="150px">
             <img src="../IMAGES/request-assets-png/icons/request-icons-14.png" height="55" width="55" alt="notification" style="margin: 0px 700px 0px 600px;">
-        </div>
-        <div class="right-text">
+        </th>
+        <th class="right-text" width="150px">
             <span style="color:#5A5A5A; font-weight: 400; font-size: 14px">APPROVED&nbsp;&nbsp;</span>
             <img src="../IMAGES/request-assets-png/icons/request-icons-30.png" height="11" width="11"
                 alt="green-notification" />
-        </div>
-    </div>
+        </th></tr>
+    </table>
     <div class="request-list">
         <div style="margin: 20px">
             <span style="color: #5A5A5A; font-size: 14px; font-weight: 500">PUR - 2019 - 056</span><br><br>

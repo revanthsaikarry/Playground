@@ -4,38 +4,52 @@
 <head>
     <title>Add-Item-frame</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="D:/Git_local/Playground/html/css/AddItemFrame.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddItemFrame.css">
 </head>
 
 <body>
     <div class="main">
         <div class="topbar">
             <div>
-                <sapn style="font-family: 'roboto'; font-weight: 500; color: #5A5A5A; font-size: 20px">Add Item</sapn>
+                <sapn style="font-family: 'roboto'; font-weight: 500; color: #5A5A5A; font-size: 20px;">Add Item</sapn>
             </div>
             <div>
-                <img src="..\request-assets-png\icons\request-icons-13.png" height="15px" width="15px">
+                <img src="..\IMAGES\request-assets-png\icons\request-icons-13.png" height="20px" width="20px">
             </div>
-        </div>   
-            <div class="content">
-                    <p style="font-family: 'roboto'; font-size: 14px; font-weight: 700; margin-bottom: 10px;">NOTE</p>
-                    <p style="font-family: 'loto'; font-size: 12px; font-weight: 400; margin-bottom: 50px;">border is also established with a 2-pixel width and a border color that won't last, courtesy of the JavaScript below.</p>
-                    <div class="txtara">
-                        <textarea id="txtarea" name="note" rows="6" cols="45"></textarea>
-                    </div>
-                    <p style="font-family: 'roboto'; font-size: 14px; font-weight: 700; margin-top: 50px; margin-bottom: 10px;">REQUEST TYPE</p>
-                    <p style="font-family: 'loto'; font-size: 12px; font-weight: 400; margin-bottom: 20px">border is also established with a 2-pixel width and a border color that won't last, courtesy of the JavaScript below.</p><br><br>
-                    <form name="request-type" style="font-family: 'loto'; font-size: 12px; font-weight:400;">
-                        <input type="radio" name="self" value="SELF" style="margin-bottom:30px; border: #D3D3D3; background-color: #FCFCFC">&nbsp;&nbsp;&nbsp;&nbsp;SELF<br>
-                        <input type="radio" name="TEAM" value="TEAM / DEPARTMENT / BRANCH" style="margin-bottom:30px; border: #D3D3D3; background-color: #FCFCFC">&nbsp;&nbsp;&nbsp;&nbsp;TEAM / DEPARTMENT / BRANCH<br>
-                        <input type="radio" name="else" value="SOMEONE ELSE" style="margin-bottom:30px; border: #D3D3D3; background-color: #FCFCFC">&nbsp;&nbsp;&nbsp;&nbsp;SOMEONE ELSE<br>
-                    </form>
-                    <div class="bottom-txt">
-                            <a href="#" style="font-family:'loto'; font-size: 12px; font-weight: 600; color:#595959;">SAVE DRAFT</a>
-                            <input type="button" style="border-radius: 25px; width: 150px; padding: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;" value="NEXT&nbsp;&#8594;">
-                    </div>
-                </div>
+        </div>
+        <div class="content">
+            <p
+                style="font-family: 'loto'; font-size: 12px; font-weight: 400; margin-bottom: 15px; margin-top: 30px; margin-left: 3%; display: inline-block;">
+                DESCRIPTION</p>
+            <div class="txtara" style="margin-left: 3%;">
+                <textarea id="txtarea" name="note" rows="6" cols="45" style="resize: none;"></textarea>
+            </div>
+            <p
+                style="font-family: 'roboto'; font-size: 14px; font-weight: 700; margin-top: 50px; margin-bottom: 10px; margin-left: 3%;">
+                OTY</p>
+            <div class="txtara" style="margin-left: 3%;">
+                <textarea id="txtarea" name="note" rows="2" cols="45" style="resize: none;"></textarea>
+            </div>
+            <p
+                style="font-family: 'roboto'; font-size: 14px; font-weight: 700; margin-top: 50px; margin-bottom: 10px; margin-left: 3%;">
+                FULLFILLMENT DUE DATE</p>
+            <div class="txtara" style="margin-left: 3%;">
+                <textarea id="txtarea" name="note" rows="2" cols="45"
+                    style="resize: none; display: inline-block;"></textarea>
+                <img src="../IMAGES/request-assets-png/icons/request-icons-17.png" height="30px" width="30px" />
+            </div>
+            <p style="font-family: 'roboto'; font-size: 14px; font-weight: 700; margin-top: 50px; margin-bottom: 10px; margin-left: 3%;"> APPROXIMATE PRICE</p>
+            <div class="txtara" style="margin-left: 3%; margin-bottom: 50px;">
+                <textarea id="txtarea" name="note" rows="2" cols="45" style="resize: none;"></textarea>
+            </div>
+        </div>
+        <div class="bottom-txt">
+            <a href="#" style="font-family:'loto'; font-size: 12px; font-weight: 600; color:#595959;">CANCEL</a>
+            <input type="button"
+                style="border-radius: 25px; padding-left: 20px; padding-right: 20PX; padding-bottom:10px; padding-top: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;"
+                value="DONE">
         </div>
     </div>
 </body>
+
 </html>
