@@ -54,14 +54,14 @@ legand{
     border-color: solid   #BF574A;
 }
 #tb{
-    width: 60%;
+    width: 100%;
     height: 30px;
     border: solid #D3D3D3 1px;
     border-radius: 5px;
     margin-bottom: 20px;    
 }
 #tbp{
-    width: 60%;
+    width: 100%;
     height: 30px;
     border: solid #D3D3D3 1px;
     border-radius: 5px;
