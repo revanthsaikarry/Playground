@@ -3,16 +3,17 @@
     margin: 0%;
 }
 body{
-    padding: 20px;
+    padding: 2%;
     background-color: #F6F8F9;
 }
 .all{
     background-color: #FFFFFF;
-    border-radius: 3%;
+    border-radius: 15px;
     padding: 10%;
-    margin: auto 0;   
+    /* margin: auto 0;    */
     height: 90%;
     width: 80%;     
+    box-shadow: 1px 2px 2px 2px #7f7f7f;
 }
 .box{
     background-color: #FFFFFF;
@@ -20,21 +21,31 @@ body{
 }
 .remember-me{
     float: left;
+    font-family: roboto;
+    font-weight: 400;
+    color: #707070;
+    font-size: 1.2vw;
 }
 .forgot-pass{
     float: right;
+    line-height: 20px;
+    border-bottom: solid 1.5px #707070;;
+    font-family: roboto;
+    font-weight: 400;
 }
 legand{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 0.5cm;
-    text-decoration-line: underline;
+    text-decoration-line: none;
+    line-height: 20px;  
+    border-bottom: solid 2px #747474;
     margin-bottom: 10px;
     }
 #fieldset{
     border: 0px;
     width: 50%;
     height: 60%;
-    margin: auto;    
+    margin: 0 auto;    
 }
 .triangle-up {
     color:  #BF574A;  
@@ -45,17 +56,25 @@ legand{
 #tb{
     width: 60%;
     height: 30px;
-    border-radius: 10%;
+    border: solid #D3D3D3 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;    
 }
 #tbp{
     width: 60%;
     height: 30px;
-    border-radius: 10%;
-}
+    border: solid #D3D3D3 1px;
+    border-radius: 5px;
+    margin-bottom: 20px;}
 .button{
-    border-radius: 25%;
-    width: 3cm;
-    height: 30px;
-    background-color: #0C7EF1;
-    -webkit-text-fill-color: aliceblue; 
+    margin-top: 40px;
+    font-family: roboto;
+    font-weight: 700;
+    border-radius: 25px;
+    border: 0px;
+    padding: 15px 50px 15px 50px;
+    /* width: 130px;
+    height: 40px; */
+    background-color: #32BDD2;
+    -webkit-text-fill-color: #FFFFFF; 
 }
