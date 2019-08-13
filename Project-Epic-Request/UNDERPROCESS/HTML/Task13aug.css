@@ -37,3 +37,7 @@ ion-icon{
     flex-wrap: initial;
     align-items: center;
 }
+.intro{
+    display: flex;
+    flex-wrap: initial;
+}
