@@ -37,7 +37,23 @@ ion-icon{
     flex-wrap: initial;
     align-items: center;
 }
+.circle{
+    /* position: absolute; */
+    /* top: 45.8em; */
+    /* left: 0;  */
+    background-color: #F6F8F9;
+    border: solid 1px #000000;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 12px;
+    /* margin-top: 10px; */
+}
 .intro{
-    display: flex;
-    flex-wrap: initial;
+    /* display: flex;
+    flex-wrap: initial; */
+}
+.intro-text{
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-end;
 }
