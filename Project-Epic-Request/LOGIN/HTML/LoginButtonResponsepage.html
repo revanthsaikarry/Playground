@@ -3,9 +3,14 @@
 
 <head>
     <title>Login-Page</title>
-    <link rel="stylesheet" type="text/css" href="..\css\LoginButtonResponsepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/LoginButtonResponsepage.css">
     <!-- <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> -->
+    <script>
+        function init(){
+            location.href = "../../MYREQUEST/HTML/Requester-page-withoutfilter.html";
+        }
+    </script>
 </head>
 
 <body>
@@ -31,7 +36,7 @@
                             <a href="Forgot-pass.html" style="text-decoration-line: none; color: #707070;">forgot password?</a>
                     </div><br><br><br>
                    <div class="login">
-                        <button class="button" type="submit">Login</button>
+                        <button class="button" type="submit" onclick="init();">Login</button>
                     </div>
                         
                 </fieldset>
