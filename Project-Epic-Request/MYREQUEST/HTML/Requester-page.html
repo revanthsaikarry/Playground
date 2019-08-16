@@ -5,6 +5,32 @@
     <title>Requester-Page</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../CSS/Requester-page.css">
+    <script>
+            function init(){
+                location.href = "../../UNDERPROCESS/HTML/Request-view.html"
+            }
+            var click = document.getElementById('dropdown-content');
+            click.addEventListener('click', dropdown);
+            function dropdown() {
+                document.getElementById('myDropdown').classList.toggle("show");
+            }
+            
+            // function init(){
+            //     document.getElementById("filter-button").classList.toggle("show");
+            // }
+            // window.onclick = function(event) {
+            //     if (!event.target.matches('.filter-button')) {
+            //         var dropdowns = document.getElementsByClassName("dropdown-content");
+            //         var i;
+            //         for (i = 0; i < dropdowns.length; i++) {
+            //             var openDropdown = dropdowns[i];
+            //             if (openDropdown.classList.contains('show')) {
+            //                 openDropdown.classList.remove('show');
+            //             }
+            //         }
+            //     }
+            // }
+        </script>
 </head>
 
 <body>
@@ -39,8 +65,16 @@
             </div>
         </div>
         <div class="filter-bar">
-            <img src="../IMAGES/request-assets-png/icons/request-icons-01.png" height="33" width="35" alt="filter-bar" style="margin: 20px" />
-            <div class="text">
+                <div class="dropdown">
+                        <img src="../IMAGES/request-assets-png/icons/request-icons-01.png" id="filter-button" height="33" width="35" alt="filter-bar" style="margin: 1.8vw" onclick="dropdown();"/>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="Requester-page-withoutfilter.html">CLEAR</a>
+                          <a href="#about" style="color: #B5B5B5">APPROVED</a>
+                          <a href="#DRAFT">DRAFT</a>
+                          <a href="#AWIATING">AWIATING</a>
+                          <a href="#REJECTED">REJECTED</a>
+                        </div>
+                      </div>            <div class="text">
                 <p style="color: #5A5A5A; font-weight: 400;">FILTER</p>
                 <p style="color: #505050; font-weight: 700; font-size: 10px">Showing approved Requests...</p>
             </div>

@@ -9,7 +9,11 @@
         function init(){
             location.href = "../../UNDERPROCESS/HTML/Request-view.html"
         }
-        // document.getElementById("filter-button").onclick = function() {init()};
+        var click = document.getElementById('dropdown-content');
+        click.addEventListener('click', dropdown);
+        function dropdown() {
+            document.getElementById('myDropdown').classList.toggle("show");
+        }
         
         // function init(){
         //     document.getElementById("filter-button").classList.toggle("show");
@@ -62,14 +66,15 @@
         </div>
         <div class="filter-bar">
             <div class="dropdown">
-            <img src="../IMAGES/request-assets-png/icons/request-icons-01.png" id="filter-button" height="33" width="35" alt="filter-bar" style="margin: 1.8vw" onclick="init();"/>
-            <div class="dropdown-content">
-                <a href="Requester-page.html">CLEAR</a>
-                <a href="Requester-page.html">APPROVED</a>
-                <a href="#">DRAFT</a>
-                <a href="#">AWIATING</a>
-                <a href="#">REJECTED</a>
-            </div></div>
+                    <img src="../IMAGES/request-assets-png/icons/request-icons-01.png" id="filter-button" height="33" width="35" alt="filter-bar" style="margin: 1.8vw" onclick="dropdown();"/>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#home" style="color: #B5B5B5">CLEAR</a>
+                      <a href="Requester-page.html">APPROVED</a>
+                      <a href="#DRAFT">DRAFT</a>
+                      <a href="#AWIATING">AWIATING</a>
+                      <a href="#REJECTED">REJECTED</a>
+                    </div>
+                  </div>
             <div class="text">
                 <p style="color: #5A5A5A; font-weight: 400;">FILTER</p>
                 <p style="color: #505050; font-weight: 700; font-size: 10px">You have not applied any filter...</p>
