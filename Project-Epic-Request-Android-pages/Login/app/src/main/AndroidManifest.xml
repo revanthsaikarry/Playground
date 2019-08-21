@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AlertMsg"></activity>
+        <activity
+            android:name=".BurgerMenu"
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar"
+            android:icon="@color/cardview_dark_background"
+            android:colorMode="@color/cardview_dark_background">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AlertMsg" />
         <activity android:name=".ForgotPassword" />
         <activity android:name=".MainActivity">
             <intent-filter>

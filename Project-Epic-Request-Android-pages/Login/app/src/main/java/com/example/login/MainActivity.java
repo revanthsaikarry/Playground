@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
         {
             @Override
                     public void onClick(View v){
-                      image1.setVisibility(1);
-                      txt1.setVisibility(1);
-                      image2.setVisibility(1);
-                      txt2.setVisibility(1);
+                      image1.setVisibility(View.VISIBLE);
+                      txt1.setVisibility(View.VISIBLE);
+                      image2.setVisibility(View.VISIBLE);
+                      txt2.setVisibility(View.VISIBLE);
                     }
 
                 });

@@ -2,7 +2,9 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,7 +18,9 @@ public class ForgotPassword extends AppCompatActivity {
     AlertDialog.Builder alertBuilder;
     EditText editText;
     ImageView img1;
+    ImageView img2;
     TextView txt1;
+    TextView txt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +34,32 @@ public class ForgotPassword extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         submit_btn = findViewById(R.id.button);
         img1 = findViewById(R.id.imageView6);
+        img2 = findViewById(R.id.imageView4);
+
         txt1 = findViewById(R.id.textView11);
-        final String txt = txt1.getText().toString();
+        txt2 = findViewById(R.id.textView7);
 
 
 
         submit_btn.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(View view) {
-                if (!TextUtils.isEmpty(txt)) {
+                if (editText.getText().toString().equals("")) {
+                    img1.setVisibility(View.VISIBLE);
+                    txt1.setVisibility(View.VISIBLE);
+                    img2.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                }
+
+                else if (editText.getText().toString().equals("rev")){
+                    Intent intent = new Intent(getApplicationContext(),BurgerMenu.class);
+                    startActivity(intent);
+                }
+
+                else{
                     alertDialog.show();
-            } else {
-                    img1.setVisibility(1);
-                    txt1.setVisibility(1);
-             }
+                }
             }
         });
 }
