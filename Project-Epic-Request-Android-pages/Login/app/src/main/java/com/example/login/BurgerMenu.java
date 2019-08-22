@@ -22,8 +22,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.List;
 
 public class BurgerMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +35,8 @@ public class BurgerMenu extends AppCompatActivity
     ImageView filter;
     TextView popup;
     ListPopupWindow listPopupWindow;
+    List list;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,22 +60,42 @@ public class BurgerMenu extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+            listView=findViewById(R.id.listView);
           filter=findViewById(R.id.filterOption);
         String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
+
+
+        String[] dates={"12-aug","15-aug","22-aug","18-aug","22-jul","12-jul"};
+        String[] titles={"PUR-2019-056","PUR-2019-053","PUR-2019-065","PUR-2019-024","PUR-2019-015"};
+        String[] status = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
+
+
+        ListAdapter listAdapter=new MyListAdapter(getApplicationContext(),titles,dates,status);
+        listView.setAdapter(listAdapter);
+
 
 //        popup = findViewById(R.id.openPopup);
         listPopupWindow = new ListPopupWindow(getApplicationContext());
         listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.contentlist,content_list));
         listPopupWindow.setAnchorView(filter);
         listPopupWindow.setModal(true);
+//        final ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.contentlist,content_list);
+//        dataAdapter.setDropDownViewResource(android.R.layout.list_content);
+
+//        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.contentlist,content_list));
+
 
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 listPopupWindow.show();
+//                dataAdapter.show();
             }
         });
 
+
+//        listView=findViewById(R.id.listView);
+//
     }
 
     @Override
