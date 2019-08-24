@@ -17,8 +17,7 @@
             }
             
             function myfun(){
-
-                alert("Browse button have been pressed");
+                document.getElementById("file").style.visibility = "visible";
             }
     </script>
 </head>
@@ -62,7 +61,7 @@
                         <div class="image"><img src="..\IMAGES\request-assets-png\icons\request-icons-06.png" height="25px" width="25px" style="margin-left:40px;">
                     <p style="font-family:roboto; font-weight:500; color:#FFFFFF;">Drop a file here</p></div></div>
                 </div>
-                <div style="display: flex; flex-wrap: intial; border: 1px solid #DFEBEF; opacity: 1;">
+                <div style="display: flex; flex-wrap: intial; border: 1px solid #DFEBEF; opacity: 1; visibility: hidden;" id="file">
                 <div style="width: 80%; border: 1px solid #DFEBEF;">
                     <div style="border-bottom: 1px solid #DFEBEF; padding: 1%;">
                     <div style="margin:2%; border: 1px solid #FFFFFF; border-radius:5px; background-color: #E0E0E0;display: flex; justify-content: space-between;align-items: center;padding: 1%;">
@@ -73,7 +72,7 @@
                         <input type="text" id="description" style="margin: 2%;padding: 1%; border: 0; width: 70%; background-color: #FFFFFF; font: Regular 10px/14px Roboto; letter-spacing: 0.5px; color: #B5B5B5; opacity: 1;" placeholder="write the description…">
                     </div>
                 </div>
-                <div style="display: flex; justify-content: center; align-items: center; padding: 3%; width: 20%; border: 5px #505050;">
+                <div style="display: flex; justify-content: center; align-items: center; padding: 3%; width: 20%; border: 1px solid #DFEBEF;">
                     <button type="button" class="button" value="UPLOAD" style="border-radius: 29px" onclick="init()">UPLOAD</button> 
                 </div>
             </div>

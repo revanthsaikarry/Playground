@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add-Item-frame</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddPeopleFrame.css">
+
+    <script>
+        function init(){
+            document.getElementById("error").style.visibility = "visible";
+            document.getElementById("error_border").style.border = "1px solid #32BDD2";
+            document.getElementById("error_border").style.borderStyle = "dashed";
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="topbar">
+            <div>
+                <sapn style="font-family: 'roboto'; font-weight: 500; color: #5A5A5A; font-size: 20px;">Add People</sapn>
+            </div>
+            <div>
+                <img src="..\IMAGES\request-assets-png\icons\request-icons-13.png" height="25px" width="25px">
+            </div>
+        </div>
+        <div class="content">
+            <div class="Search_div">
+                <input type="text" placeholder="Search" id="search_id" style="border: 0px; padding: 1%; margin-left: 1%; width: 70%;"/>
+                <img src="..\IMAGES\request-assets-png\icons\request-icons-03.png" width="25px" height="25px"/>
+            </div>
+            <div class="inner-container">
+                <div class="mostly-customized-scrollbar">
+                <div class="people">
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                            <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                            <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                        </div>
+                </div>
+                <div class="people">
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                            <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                            <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                        </div>
+                </div>
+                <div class="people">
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                            <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                            <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                        </div>
+                </div>  
+                <div class="people">
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                            <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                            <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                        </div>
+                </div> 
+                <div class="people">
+                        <div style="display: flex; flex-wrap: wrap;">
+                            <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                            <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                            <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                        </div>
+                        </div>
+                        <div>
+                            <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                        </div>
+                </div>
+            </div>                   
+            </div>
+        </div>
+        <div class="bottom-txt">
+            <a href="#" style="font-family:'loto'; font-size: 12px; font-weight: 600; color:#595959;">CANCEL</a>
+            <div style="display: flex; flex-wrap: initial; border: 0px solid #32BDD2; border-radius: 25px 25px 25px 25px; border-style: dashed; opacity: 1;" id="error_border">
+                <div class="w3-container w3-center w3-animate-right" style="padding: 1%; visibility: hidden; width: 20vw;" id="error">
+             <span style=" margin-left: 15px; margin-top: 25px;">You haven't selected any person</span></div>   
+            <input type="button"
+                style="border-radius: 25px; position: relative; padding-left: 20px; padding-right: 20px; padding-bottom:10px; padding-top: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;"
+                value="DONE" onclick="init()">
+            </div>
+            </div>
+    </div>
+</body>
+
+</html>

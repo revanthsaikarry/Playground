@@ -3,9 +3,26 @@
 
 <head>
     <title>Requisition-Page</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/Roboto_fonts.css">
     <link rel="stylesheet" type="text/css" href="../CSS/Requester-page.css">
+    <script>
+        function init(){
+            var read = document.getElementsByName("read-more-text");
+            var btn = document.getElementsByName("read-more-link");
+            var a= "READ MORE";
+            console.log("entered onclick");
+
+            if(read.style.display === "none"){
+                console.log("entered if");
+                read.style.display = "block";
+                btn.innerHTML = "READ LESS";
+            }
+            else{
+                read.style.display = "none";
+                btn.innerHTML = "READ MORE";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -32,7 +49,7 @@
     <div class="mainbox">
         <div class="left-img">
             <div class="req-txt">
-                <p style="font-family: 'roboto'; font-weight: 700; font-size: 14px;">REQUISITION</p>
+                <p style="font-family: 'loto'; font-weight: 700; font-size: 14px;">REQUISITION</p>
                 <img src="../IMAGES/request-assets-png/images/request-image-31.png" height="500" alt="address-bar">
             </div>
         </div>
@@ -50,8 +67,8 @@
             <div class="Item-discription">
                 <div class="item-details">
                     <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">IBM ThinkServer TS150 Tower Server With Max. Processor 1 x Intel Xeon E3 (Quad Core) E3-1225 v5"(3.3 GHz /Cache 8 MB)</p>
-                    <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;"> / STD MEMORY 8GB X 1/ MAX. MEMORY 64GB 4 Slots/HARD DRIVE 1 X 1TB SATA 3.5" 7.2k SATA / STD. HDD BAY/ 3 bay MAX. HDD BAY upto 4 x 3.5" +1 x 2.5" bay/ OPTICAL Multi Burner/Integrated RAID 0,1,5,10 (RAID 121i).</span> -->
-                    <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a>
+                    <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; display: none; width: 259px;" class="read-more-text"> / STD MEMORY 8GB X 1/ MAX. MEMORY 64GB 4 Slots/HARD DRIVE 1 X 1TB SATA 3.5" 7.2k SATA / STD. HDD BAY/ 3 bay MAX. HDD BAY upto 4 x 3.5" +1 x 2.5" bay/ OPTICAL Multi Burner/Integrated RAID 0,1,5,10 (RAID 121i).</span>
+                    <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;" class="read-more-link" onclick="init();">READ MORE</a>
                 </div>
                 <div class="item-qnty">
                     <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">01</span>
@@ -69,8 +86,8 @@
             <div class="Item-discription">
                     <div class="item-details">
                         <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">Lenovo ThinkServer TS450 (PN:70M2001VIH) With Max. Processor 1 x Intel Xeon E3 (Quad Core) E3-1225</p>
-                        <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span> -->
-                        <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a>
+                        <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;width: 259px; display: none;" class="read-more-text"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span>
+                        <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;" class="read-more-link" onclick="init();">READ MORE</a>
                     </div>
                     <div class="item-qnty">
                         <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">02</span>
@@ -88,8 +105,8 @@
                 <div class="Item-discription">
                         <div class="item-details">
                             <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">IBM X3300M4 Server With x3300M4/ Part NO:7382IA4/ Intel Xeon E5 1230v2 1.8 GHz,10 MB,1066MHz/ 1x 8GB RAM/</p>
-                            <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;">  1x500GB SATA HDD/ 3.5Simple-Swap/ MULTI BUTRNER</span> -->
-                            <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a>
+                            <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; display: none; width: 259px;" class="read-more-text">  1x500GB SATA HDD/ 3.5Simple-Swap/ MULTI BUTRNER</span>
+                            <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;" clas="read-more-link" onclick="init();">READ MORE</a>
                         </div>
                         <div class="item-qnty">
                             <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">02</span>
@@ -107,8 +124,8 @@
                     <div class="Item-discription">
                             <div class="item-details">
                                 <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">IBM Lenovo ThinkServer RD450 Rack Server (PN:70Q90059IH) with 1 x Intel® Xeon® E5-2620v4 (2.1GHz/8C/20MB/</p>
-                                <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;"> 85W/2133Mhz)/Max: 2 Processors/ STD MEMORY 16GB X 1 MAX. MEMORY 1 TB ;16 Slots/ HARD DRIVE : Open Bay (2.5” HOT Swap SAS/SATA STD. HDD BAY 8 bay / MAX. HDD BAY 16 bay with optical bay/24 bay without optical bay) / OPTICAL Multi Burner/ Integrated RAID 0,1,10 (RAID 110i). Supports only SATA drive/ Power Supply Standard (Inbuilt) 1 x 750W Power Supply Max: 2</span> -->
-                                <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a>
+                                <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;display: none; width: 259px;" class="read-more-text"> 85W/2133Mhz)/Max: 2 Processors/ STD MEMORY 16GB X 1 MAX. MEMORY 1 TB ;16 Slots/ HARD DRIVE : Open Bay (2.5” HOT Swap SAS/SATA STD. HDD BAY 8 bay / MAX. HDD BAY 16 bay with optical bay/24 bay without optical bay) / OPTICAL Multi Burner/ Integrated RAID 0,1,10 (RAID 110i). Supports only SATA drive/ Power Supply Standard (Inbuilt) 1 x 750W Power Supply Max: 2</span>
+                                <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;" class="read-more-link" onclick="init();">READ MORE</a>
                             </div>
                             <div class="item-qnty">
                                 <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">01</span>
@@ -126,8 +143,8 @@
                         <div class="Item-discription">
                                 <div class="item-details">
                                     <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">daptec 128 MB Raid Controller Pair. Pci-e SAS/SATA</p>
-                                    <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span> -->
-                                    <!-- <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a> -->
+                                    <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; display: none; width: 259px;" class="read-more-text"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span>
+                                    <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;"class="read-more-link" onclick="init();">READ MORE</a>
                                 </div>
                                 <div class="item-qnty">
                                     <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">01</span>
@@ -145,8 +162,8 @@
                             <div class="Item-discription">
                                     <div class="item-details">
                                         <p style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; width: 259px;">Lenovo ThinkServer TS450 (PN:70M2001VIH) With Max. Processor 1 x Intel Xeon E3 (Quad Core) E3-1225</p>
-                                        <!-- <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px;"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span> -->
-                                        <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;">READ MORE</a>
+                                        <span style="font-family:'roboto'; font-weight: 400; color: #747474; font-size: 12px; display: none; width: 259px;" class="read-more-text"> v5”(3.3 GHz /Cache 8 MB)/ STD MEMORY 8GB X 1 MAX. MEMORY 64GB; 4 DIMM Memory Slots/ HARD DRIVE Open Bay/ 2.5” SAS/SATA HS Bays (8 bay MAX. HDD BAY upto 8 x 2.5” bay MAX. HDD BAY upto 16x2.5”)/OPTICAL Multi Burner/ PCIe RAID 0,1,10 (RAID 520i). Supports SAS & SATA drives/Power Supply Standard (Inbuilt) 1 x 450W Power Supply /Max: 2</span>
+                                        <a href="#" style="margin-top: 10px;text-decoration-line: none; font-family:'roboto'; font-weight: 700; font-size: 10px; color:#747474;" class="read-more-link" onclick="init();">READ MORE</a>
                                     </div>
                                     <div class="item-qnty">
                                         <span style="font-family:'roboto'; font-weight: 400;font-size:12px; color: #707070;">01</span>

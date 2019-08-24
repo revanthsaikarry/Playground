@@ -188,7 +188,7 @@ body{
     display: flex;
     align-items: center;
     padding: 25px;
-    background-color: #F0F0F0;
+    background-color: #f0f0f0;
     justify-content: space-between;
     width: 100%;
 }
@@ -202,4 +202,7 @@ body{
     padding: 20px;
     align-items: center;
     justify-content: space-between;
+    background-color: #FFFFFF;
+    border: 0.5px solid #F0F0F0;
+    opacity: 1;
 }
