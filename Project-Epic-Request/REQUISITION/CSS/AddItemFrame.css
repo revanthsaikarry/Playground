@@ -2,8 +2,12 @@
     padding: 0%;
     margin: 0%;
 }
-body{
+body {
     background-color: #7F7F7F;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .topbar{
     display: flex;
@@ -21,10 +25,11 @@ body{
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;   
 }
-.main{
+.main {
     /* background-color: #FFFFFF; */
-    margin: 15%;
-    border:0px;
+    margin: 10%;
+    width: 75%;
+    border: 0px;
     border-radius: 0%;
 }
 .bottom-txt{
