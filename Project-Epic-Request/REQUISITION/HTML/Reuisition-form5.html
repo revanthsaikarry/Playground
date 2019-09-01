@@ -6,14 +6,130 @@
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../CSS/form5.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/AddPeopleFrame.css">
     <script>
         function init(){
             location.href = "Reuisition-form6.html";
+        }
+        function init2(){
+            document.getElementById("plus").style.display = "none";
+            document.getElementById("minus").style.display = "block";
+            document.getElementById("error").style.visibility = "visible";
+            document.getElementById("error-text").innerHTML = "1 person selected";
+            document.getElementById("error_border").style.border = "1px solid #32BDD2";
+            document.getElementById("error_border").style.borderStyle = "dashed";
+        }
+        function init3(){
+            document.getElementById("minus").style.display = "none";
+            document.getElementById("plus").style.display = "block";
+            document.getElementById("error").style.visibility = "visible";
+            document.getElementById("error-text").innerHTML = "You haven't selected any person";
+            document.getElementById("error_border").style.border = "1px solid #32BDD2";
+            document.getElementById("error_border").style.borderStyle = "dashed";
+        }
+        function init4(){
+            var frame = document.getElementById("main1");
+            if(frame.style.display === "none"){
+                frame.style.display = "block";
+            }
+            else{
+                frame.style.display = "none";
+            }
         }
     </script>
 </head>
 
 <body>
+
+        <div class="main1" id="main1">
+                <div class="topbar1">
+                    <div>
+                        <sapn style="font-family: 'roboto'; font-weight: 500; color: #5A5A5A; font-size: 20px;">Add People</sapn>
+                    </div>
+                    <div>
+                        <img src="..\IMAGES\request-assets-png\icons\request-icons-13.png" height="25px" width="25px"   onclick="init4()"> 
+                    </div>
+                </div>
+                <div class="content1">
+                    <div class="Search_div">
+                        <input type="text" placeholder="Search" id="search_id" style="border: 0px; padding: 1%; margin-left: 1%; width: 70%;"/>
+                        <img src="..\IMAGES\request-assets-png\icons\request-icons-03.png" width="25px" height="25px"/>
+                    </div>
+                    <div class="inner-container1">
+                        <div class="mostly-customized-scrollbar">
+                        <div class="people1">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                                    <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                                    <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                                </div>
+                                </div>
+                                <div class="plus" id="plus" onclick="init2();">
+                                    <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                                <div class="minus" id="minus" onclick="init3();">
+                                        <img src="..\IMAGES\request-assets-png\icons\request-icons-09.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                        </div>
+                        <div class="people1">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                                    <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                                    <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                                </div>
+                                </div>
+                                <div>
+                                    <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                        </div>
+                        <div class="people1">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                                    <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                                    <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                                </div>
+                                </div>
+                                <div>
+                                    <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                        </div>  
+                        <div class="people1">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                                    <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                                    <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                                </div>
+                                </div>
+                                <div>
+                                    <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                        </div> 
+                        <div class="people1">
+                                <div style="display: flex; flex-wrap: wrap;">
+                                    <img src="../IMAGES/request-assets-png/images/profile-pic.jpg" style="display: inline-block; border-radius: 50%;" height="33" width="33" alt="Profile-pic"/>
+                                    <div style="margin-left: 1vw;"><p style="font-family: roboto; color:#747474; font-size: 1.2vw; font-weight: 400;">Luke rey</p>
+                                    <p style="font-family: roboto; color:#747474; font-size: 0.8vw; font-weight: 400; display: inline-block;">Lorem ipsum doler sit amet.</p>
+                                </div>
+                                </div>
+                                <div>
+                                    <img src="..\IMAGES\request-assets-png\icons\request-icons-10.png" height="40vw" width="40vw" alt="delete-icon"/>
+                                </div>
+                        </div>
+                    </div>                   
+                    </div>
+                </div>
+                <div class="bottom-txt1">
+                    <a href="#" style="font-family:'loto'; font-size: 12px; font-weight: 600; color:#595959;">CANCEL</a>
+                    <div style="display: flex; flex-wrap: initial; border: 0px solid #32BDD2; border-radius: 25px 25px 25px 25px; border-style: dashed; opacity: 1;" id="error_border">
+                        <div class="w3-container w3-center w3-animate-right" style="padding: 1%; visibility: hidden; width: 20vw;" id="error">
+                     <span style=" margin-left: 15px; margin-top: 25px;" id="error-text">You haven't selected any person</span></div>   
+                    <input type="button"
+                        style="border-radius: 25px; position: relative; padding-left: 20px; padding-right: 20px; padding-bottom:10px; padding-top: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;"
+                        value="DONE" onclick="init()">
+                    </div>
+                    </div>
+            </div>
+
     <div class="main">
         <div class="topbar">    
             <img src="../IMAGES/request-assets-png/icons/request-icons-02.png" height="35" width="35" alt="Burger-menu" style="margin-left: 20px;">
@@ -42,8 +158,8 @@
         <div class="content">
             <div class="attachment"><div><P style="font-family: roboto; font-weight: 700;color: #505050; font-size: 14px; padding-left: 15px; padding-bottom: 10px; padding-top: 15px;">APPROVAL(S)</P>
             <p style="font-family: loto; font-weight: 400; font-size: 12px; color:#747474; padding-left: 15px; padding-bottom: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-            <div style="display: flex; align-items: center; margin-right: 1%;"><span style=" margin-right: 1%; width: 9vw; font-family: roboto; font-weight: 700;color: #505050; font-size: 14px; padding-left: 15px; padding-bottom: 10px; padding-top: 15px;">ADD APPROVER</span>
-                <img src="../IMAGES/request-assets-png/icons/request-icons-10.png" height="30vw" width="30vw" alt="add-button">
+            <div style="display: flex; align-items: center; margin-right: 1%;"><span style=" margin-right: 4%; width: 9vw; font-family: roboto; font-weight: 700;color: #505050; font-size: 14px; padding-left: 15px; padding-bottom: 10px; padding-top: 15px; text-align: end;">ADD APPROVER</span>
+                <img src="../IMAGES/request-assets-png/icons/request-icons-10.png" height="30vw" width="30vw" alt="add-button" onclick="init4();">
             </div></div>
             <div class="big-container">
                 <div class="inner-container">
