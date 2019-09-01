@@ -198,17 +198,17 @@ body{
     margin-left: 35px;
     margin-right: 35px;
     margin-bottom: 15px;
-    box-shadow: 1px 0px 0px 0px #D3D3D3; 
+    box-shadow: 0px 0px 0px 0px #D3D3D3; 
 }
 .left-img{
-    width: 80px;
-    display: flex;
-    justify-content: center;
+    width: 5%;
+    display:flex;
+    /* justify-content: center; */
     /* background-color: #FFFFFF; */
 }
 .req-txt{
-    display: inline-block;
-    margin: 25%;
+    display: inline;
+    margin: 4vw 0.5vw 1vw 1vw;
     /* margin-top: 100px;
     margin-bottom: 60px;
     transform: rotate(-90deg);
@@ -244,6 +244,7 @@ body{
     /* display: flex; */
     /* flex-wrap: wrap; */
     padding: 2%;
+    margin: 2%;
 }
 .privacy{
     padding: 5% 0% 5% 0%;

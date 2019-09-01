@@ -12,8 +12,7 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: #F0F0F0;
-    box-shadow: 1px 1px 1px 1px #E0E0E0;
-}
+   }
 .drag-drop{
     display: flex;
     background-color: #32BDD2;
@@ -47,7 +46,7 @@ body{
     margin-top: 10px;   
 }
 .big-container{
-    margin: 3%;
+    background-color: #ffffff;
 }
 .inner-container{
     display: flex;

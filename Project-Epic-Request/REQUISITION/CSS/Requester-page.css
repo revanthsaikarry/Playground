@@ -137,7 +137,7 @@ body{
     margin-left: 35px;
     margin-right: 35px;
     margin-bottom: 15px;
-    box-shadow: 1px 1px 1px 1px #D3D3D3; 
+    /* box-shadow: 1px 1px 1px 1px #D3D3D3;  */
 }
 .left-img{
     width: 80px;
@@ -181,8 +181,10 @@ body{
     margin-left: 20px;
     margin-right: 20px;
 }
-.Item-list-content{
+.Item-list-content {
     width: 100%;
+    padding: 3%;
+    background-color: #FCFCFC;
 }
 .Item-head{
     display: flex;

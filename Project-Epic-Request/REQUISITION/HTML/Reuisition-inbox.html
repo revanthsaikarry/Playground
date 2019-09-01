@@ -9,27 +9,44 @@
 
     <script>
         function init(){
-            console.log("main method");
-            var images = document.getElementById("profile");
-            var profile = document.getElementsByTagName("button");
-            var publick = document.getElementById("publick-btn");
-            var private = document.getElementById("private-btn");
-            alert(this.id);
-            if(this.id == "publick-btn")
-            {
-                console.log("publick-method");
-                profile.style.display = "block";
-                publick.style.background = "#245070";
-                private.style.background = "#FFFFFF";
-            }
-            if(this.id == "private-btn")
-            {
-                console.log("private-method");
-                profile.style.display = "none";
-                private.style.background = "#245070";
-                publick.style.background = "#FFFFFF";
+            console.log("public method");
+            var profile = document.getElementsByClassName("profile");
+            var public = document.getElementById("public");
+            var profile_count = profile.length;
+            public.style.color = "#FFFFFF";
+            public.style.background = "#245070";
+            public.style.border = "0.5px solid  #245070";
+
+            var private = document.getElementById("private");
+            private.style.color = "#245070";
+            private.style.background = "#FFFFFF";
+            private.style.border = "0.5px solid  #245070";
+
+            for(var i=0; i<profile_count; i++){
+                profile[i].style.display = "block";
             }
         }
+        function init1(){
+            console.log("private method");
+            var profile = document.getElementsByClassName("profile");
+            var private = document.getElementById("private");
+            var profile_count = profile.length;
+            private.style.color = "#FFFFFF";
+            private.style.background = "#245070";
+            private.style.border = "0.5px solid  #245070";
+
+            var public = document.getElementById("public");
+            public.style.color = "#245070";
+            public.style.background = "#FFFFFF";
+            public.style.border = "0.5px solid  #245070"; 
+        
+            for(var i=0; i<profile_count; i++){
+                profile[i].style.display = "none";
+            }
+        }
+        function init2(){
+                location.href = "Request-view.html"
+            }
     </script>
 </head>
 
@@ -64,13 +81,13 @@
                         alt="back-button">
                 </div>
                 <div
-                    style="background: #FFFFFF 0% 0% no-repeat padding-box; opacity: 1;box-shadow: 0px 3px 6px #E0E0E0; padding: 28%; border-right: 2px solid #E6AF2E;">
-                    <img src="..\IMAGES\request-assets-png\icons\request-icons-25.png" width="25px" height="25px"
-                        alt="back-button" style="color: #747474 0% 0% no-repeat padding-box; opacity: 1;">
+                    style="background: #FFFFFF 0% 0% no-repeat padding-box; opacity: 1;box-shadow: 0px 3px 6px #E0E0E0; padding: 28%;">
+                    <img src="..\IMAGES\request-assets-png\icons\request-icons-19.png" width="25px" height="25px"
+                        alt="back-button" style="color: #747474 0% 0% no-repeat padding-box; opacity: 1;" onclick="init2();">
                 </div>
                 <div
-                    style="background: #FFFFFF 0% 0% no-repeat padding-box; opacity: 1;box-shadow: 0px 3px 6px #E0E0E0; padding: 28%;">
-                    <img src="..\IMAGES\request-assets-png\icons\request-icons-20.png" width="25px" height="25px"
+                    style="background: #FFFFFF 0% 0% no-repeat padding-box; opacity: 1;box-shadow: 0px 3px 6px #E0E0E0; padding: 28%; border-right: 2px solid #E6AF2E;">
+                    <img src="..\IMAGES\request-assets-png\icons\request-icons-26.png" width="25px" height="25px"
                         alt="back-button" style="color: #747474 0% 0% no-repeat padding-box; opacity: 1;">
                 </div>
                 <div
@@ -100,23 +117,21 @@
             </p>
             <div class="privacy">
                 <button
-                    style="background: #245070 0% 0% no-repeat padding-box; border: 0.5px solid #245070; border-radius: 7px; opacity: 1; padding: 1% 3% 1% 3%; font: Bold 12px/14px Roboto; letter-spacing: 1.2px; color: #FFFFFF; opacity: 1;" id="publick-btn" onclick="init();">PUBLIC</button>
+                    style="background: #245070; border: 0.5px solid #245070; border-radius: 9px; opacity: 1; padding: 1% 3% 1% 3%; font: Bold 12px/14px Roboto; letter-spacing: 1.2px; color: #FFFFFF; opacity: 1;" id="public" onclick="init()">PUBLIC</button>
                 <button
-                    style="margin-left: 4%; background: #FFFFFF 0% 0% no-repeat padding-box; border: 0.5px solid #245070; border-radius: 7px; opacity: 1; padding: 1% 3% 1% 3%; font: Bold 12px/14px Roboto; letter-spacing: 1.2px; color: #245070; opacity: 1;" id="private-btn" onclick="init();">PRIVATE</button>
+                    style="margin-left: 4%; background: #FFFFFF; border: 0.5px solid #245070; border-radius: 9px; opacity: 1; padding: 1% 3% 1% 3%; font: Bold 12px/14px Roboto; letter-spacing: 1.2px; color: #245070; opacity: 1;" id="private" onclick="init1()">PRIVATE</button>
             </div>
-            <div class="profile" style="margin-bottom: 1%;" id="profile">
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 30%;">
+            <div class="profile" style="margin-bottom: 1%;">
+                <div style="display: flex; align-items: center; width: 30%;">
                     <img src="..\IMAGES\request-assets-png\images\profile-pic.jpg" width="55px" ; height="55px" ;
-                        alt="profile" style="border-radius: 50%;">
+                        alt="profile" style="border-radius: 50%; margin-right: 20px;">
                     <p
                         style="padding: 15px 1px 0.2px 15px; border-radius: 50%; background: #FF0000 0% 0% no-repeat padding-box;">
                     </p>
                     <div>
-                        <p
-                            style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
+                        <p style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1; margin-left: 20px;">
                             Anurag Basu</p>
-                        <p
-                            style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
+                        <p style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1; margin-left: 20px;">
                             Lorem ipsum doler sit amet.</p>
                     </div>
                 </div>
@@ -125,19 +140,19 @@
                         alt="arroe-down">
                 </div>
             </div>
-            <div class="profile" id="profile">
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 30%;">
+            <div class="profile">
+                <div style="display: flex; align-items: center; width: 30%;">
                     <img src="..\IMAGES\request-assets-png\images\profile-pic.jpg" width="55px" ; height="55px" ;
-                        alt="profile" style="border-radius: 50%;">
+                        alt="profile" style="border-radius: 50%; margin-right: 20px;">
                     <p
                         style="padding: 15px 1px 0.2px 15px; border-radius: 50%; background: #FF0000 0% 0% no-repeat padding-box;">
                     </p>
                     <div>
                         <p
-                            style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
+                            style="margin-left: 20px; text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
                             Sameera Rautela</p>
                         <p
-                            style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
+                            style="margin-left: 20px; text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
                             Lorem ipsum doler sit amet.</p>
                     </div>
                 </div>
@@ -221,19 +236,19 @@
                     sit amet suscipit odio. Donec tempus non dolor ac aliquet. In ornare mi quis consequat viverra.</p>
 
             </div>
-            <div class="profile" id="profile">
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 30%;">
+            <div class="profile">
+                <div style="display: flex; align-items: center; width: 30%;">
                     <img src="..\IMAGES\request-assets-png\images\profile-pic.jpg" width="55px" ; height="55px" ;
-                        alt="profile" style="border-radius: 50%;">
+                        alt="profile" style="border-radius: 50%; margin-right: 20px;">
                     <p
                         style="padding: 15px 1px 0.2px 15px; border-radius: 50%; background: #FF0000 0% 0% no-repeat padding-box;">
                     </p>
                     <div>
                         <p
-                            style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
+                            style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1; margin-left: 20px;">
                             Anurag Basu</p>
                         <p
-                            style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
+                            style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1; margin-left: 20px;">
                             Lorem ipsum doler sit amet.</p>
                     </div>
                 </div>
@@ -242,19 +257,19 @@
                         alt="arroe-down">
                 </div>
             </div>
-            <div class="profile" style="margin-top: 1%;" id="profile">
-                <div style="display: flex; align-items: center; justify-content: space-between; width: 30%;">
+            <div class="profile" style="margin-top: 1%;">
+                <div style="display: flex; align-items: center; width: 30%;">
                     <img src="..\IMAGES\request-assets-png\images\profile-pic.jpg" width="55px" ; height="55px" ;
-                        alt="profile" style="border-radius: 50%;">
+                        alt="profile" style="border-radius: 50%; margin-right: 20px">
                     <p
                         style="padding: 15px 1px 0.2px 15px; border-radius: 50%; background: #FF0000 0% 0% no-repeat padding-box;">
                     </p>
                     <div>
                         <p
-                            style="text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
+                            style="margin-left: 20px; text-align: left; font: SemiBold 14px/34px Gibson; letter-spacing: 1.4px; color: #000000; opacity: 1;">
                             Anurag Basu</p>
                         <p
-                            style="text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
+                            style="margin-left: 20px; text-align: left; font: Regular 12px/34px Gibson; letter-spacing: 1.2px; color: #747474; opacity: 1;">
                             Lorem ipsum doler sit amet.</p>
                     </div>
                 </div>

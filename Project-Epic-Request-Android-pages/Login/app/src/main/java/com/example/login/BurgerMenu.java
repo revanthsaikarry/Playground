@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,6 +22,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
@@ -32,6 +34,7 @@ import java.util.List;
 public class BurgerMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    Button request_btn;
     ImageView filter;
     TextView popup;
     ListPopupWindow listPopupWindow;
@@ -93,6 +96,16 @@ public class BurgerMenu extends AppCompatActivity
             }
         });
 
+        request_btn = findViewById(R.id.button2);
+
+        request_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), RecyclerViewJson.class);
+                startActivity(intent);
+            }
+        });
+
 
 //        listView=findViewById(R.id.listView);
 //
@@ -146,7 +159,7 @@ public class BurgerMenu extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+//        } else if (id == R.id.nav_send) {
 
         }
 

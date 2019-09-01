@@ -46,6 +46,7 @@ public class MyListAdapter extends BaseAdapter {
         title.setText(String.valueOf(titles[position]));
         date.setText(String.valueOf(dates[position]));
         statusText.setText(String.valueOf(status[position]));
+        imageView.setImageResource(R.drawable.notification);
 
                 return view;
     }
