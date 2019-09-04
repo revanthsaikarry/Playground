@@ -53,6 +53,15 @@
     padding: 3% 0% 3% 0%;
     box-shadow: 0px 0px 25px 30vw #00000029;
 }
+.search_not_found{
+    display: none;
+    align-items: center;
+    margin-top: 10%;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    opacity: 1;
+}
 .minus{
     display: none;
 }
@@ -70,9 +79,9 @@
     margin: 0% 1% 0% 1%;
 }
 .inner-container1 {
-    display: flex;
+    /* display: flex; */
     /* width: 100%; */
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     /* flex-direction: column; */
     padding: 3%;
 }
