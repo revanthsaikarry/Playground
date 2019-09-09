@@ -4,18 +4,30 @@ package com.example.demoapp;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements DemoTask,DemoInteface2 {
+
+    Button Load_class_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       DemoClass d = new DemoClass();
-       d.interfacedemo1();
+
         interfacedemo();
         DemoInterface();
+
+        Load_class_btn = findViewById(R.id.Load_class_btn);
+        Load_class_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DemoClass d = new DemoClass();
+                d.interfacedemo1(getApplicationContext());
+            }
+        });
     }
 
     @Override
