@@ -6,8 +6,12 @@ import android.os.Bundle;
 import android.util.Log;
     import android.view.View;
     import android.widget.Button;
+    import android.widget.EditText;
+    import android.widget.ListView;
     import android.widget.TextView;
     import android.widget.Toast;
+
+    import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements DemoTask,DemoInteface2 {
 
@@ -18,6 +22,15 @@ public class MainActivity extends AppCompatActivity implements DemoTask,DemoInte
     TextView Book_id;
     TextView Book_title;
     TextView Book_author;
+    Button Add_btn;
+    Button Delete_btn;
+    Button Display_btn;
+    TextView Array_data;
+    EditText Add_data;
+    EditText Delete_data;
+    EditText Display_data;
+//    ListView listView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +63,46 @@ public class MainActivity extends AppCompatActivity implements DemoTask,DemoInte
                 Book_author.setText(bookDetails.Book_author);
             }
         });
+
+
+        final ArrayList<String> Array = new ArrayList<String>();
+        Add_btn = findViewById(R.id.Add_btn);
+        Delete_btn = findViewById(R.id.Delete_btn);
+        Display_btn = findViewById(R.id.Display_btn);
+        Array_data = findViewById(R.id.Array_data);
+        Delete_data = findViewById(R.id.DataToDelete);
+        Add_data = findViewById(R.id.DataToStore);
+
+        Add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value = Add_data.getText().toString();
+
+                Log.d("Add_data", "onClick: Add_data");
+//                String value1 = "bbb";
+                Array.add(value);
+//                Array.add(value1);
+            }
+        });
+        Display_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(int i=0; i<Array.size();i++) {
+//                Array_data.setText(Array.get(0) ,0, Array.size());
+//                Array_data.setText(String Array.get(0), 0, Array.size());
+                    Array_data.setText(Array_data.getText()+Array.get(i)+ "\n");
+                    System.out.println(Array.get(i));
+                }
+            }
+        });
+        Delete_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String value = Delete_data.getText().toString();
+                Array.remove(value);
+            }
+        });
+
     }
 
     @Override
