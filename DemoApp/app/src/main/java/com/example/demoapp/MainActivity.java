@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements DemoTask,DemoInte
         Display_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Array_data.setText(null);
                 for(int i=0; i<Array.size();i++) {
 //                Array_data.setText(Array.get(0) ,0, Array.size());
 //                Array_data.setText(String Array.get(0), 0, Array.size());
