@@ -65,7 +65,7 @@
                for(i=0;i<persons;i++){ 
 
                     console.log("entered loop");
-                    if(Search_text === person_name[i].textContent){
+                    if(Search_text.toUpperCase() === person_name[i].textContent.toUpperCase()){
 
                         console.log("entered if");
                         people[i].style.display = "flex";
