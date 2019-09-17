@@ -54,11 +54,6 @@ public class ForgotPassword extends AppCompatActivity {
                     txt2.setVisibility(View.VISIBLE);
                 }
 
-                else if (editText.getText().toString().equals("rev")){
-                    Intent intent = new Intent(getApplicationContext(),BurgerMenu.class);
-                    startActivity(intent);
-                }
-
                 else{
                     alertDialog.show();
                 }

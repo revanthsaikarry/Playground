@@ -5,20 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 class MyAdapter extends BaseAdapter {
-    TextView Item_id;
-    TextView Item_status;
-    TextView Item_order_date;
+//    TextView Item_id;
+//    TextView Item_status;
+//    TextView Item_order_date;
+//    ImageView imageView;
 
 
     private Context context;
-    ArrayList<String> Items_id;
-    ArrayList<String> Items_status;
-    ArrayList<String> Items_order_date;
+//    ArrayList<String> Items_id, Items_status, Items_order_date;
+    ArrayList<String> Items_id,Items_status,Items_order_date;
 
     public MyAdapter(Context context, ArrayList<String> item_id, ArrayList<String> item_name, ArrayList<String> item_order_date) {
         this.Items_id= item_id;
@@ -29,7 +30,7 @@ class MyAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 1;
+        return Items_status.size();
     }
 
     @Override
@@ -44,13 +45,23 @@ class MyAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-        View view1= LayoutInflater.from(context).inflate(R.layout.activity_main, viewGroup, false);
 
-        Item_id= view1.findViewById(R.id.Item_id);
+
+        View view1= LayoutInflater.from(context).inflate(R.layout.listview, viewGroup, false);
+        TextView Item_id, Item_status, Item_order_date, status_button;
+        ImageView imageView;
+
+        Item_id = view1.findViewById(R.id.Item_id);
         Item_status = view1.findViewById(R.id.ItemStatus);
         Item_order_date = view1.findViewById(R.id.ItemOrderDate);
+        imageView=view1.findViewById(R.id.notification);
+        status_button = view1.findViewById(R.id.notification_button);
 
-//        Item_id.setText();
+        Item_id.setText(Items_id.get(position));
+        Item_order_date.setText(Items_order_date.get(position));
+        Item_status.setText(Items_status.get(position));
+        imageView.setImageResource(R.drawable.notification);
+
         return view1;
     }
 }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image2;
     TextView txt2;
     TextView forgotTxt;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +32,22 @@ public class MainActivity extends AppCompatActivity {
         txt1 = findViewById(R.id.textView8);
         txt2 = findViewById(R.id.textView6);
         forgotTxt = findViewById(R.id.textView5);
+        editText = findViewById(R.id.editText2);
 
         LoginBtn.setOnClickListener(new View.OnClickListener()
         {
             @Override
                     public void onClick(View v){
-                      image1.setVisibility(View.VISIBLE);
-                      txt1.setVisibility(View.VISIBLE);
-                      image2.setVisibility(View.VISIBLE);
-                      txt2.setVisibility(View.VISIBLE);
+                if (editText.getText().toString().equals("")) {
+                    image1.setVisibility(View.VISIBLE);
+                    txt1.setVisibility(View.VISIBLE);
+                    image2.setVisibility(View.VISIBLE);
+                    txt2.setVisibility(View.VISIBLE);
+                }
+                      else{
+                    Intent intent = new Intent(getApplicationContext(),BurgerMenu.class);
+                    startActivity(intent);
+                }
                     }
 
                 });

@@ -1,6 +1,5 @@
 package com.example.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,30 +20,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListPopupWindow;
-import android.widget.ListView;
-import android.widget.TextView;
 
-import java.util.List;
-
-public class BurgerMenu extends AppCompatActivity
+public class RequisitionActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    Button request_btn;
-    ImageView filter;
-    TextView popup;
-    ListPopupWindow listPopupWindow;
-    List list;
-    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_burger_menu);
+        setContentView(R.layout.activity_requisition);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -62,53 +45,6 @@ public class BurgerMenu extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-            listView=findViewById(R.id.listView);
-          filter=findViewById(R.id.filterOption);
-        String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
-
-
-        String[] dates={"12-aug","15-aug","22-aug","18-aug","22-jul","12-jul"};
-        String[] titles={"PUR-2019-056","PUR-2019-053","PUR-2019-065","PUR-2019-024","PUR-2019-015"};
-        String[] status = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
-
-
-        ListAdapter listAdapter=new MyListAdapter(getApplicationContext(),titles,dates,status);
-        listView.setAdapter(listAdapter);
-
-
-//        popup = findViewById(R.id.openPopup);
-        listPopupWindow = new ListPopupWindow(getApplicationContext());
-        listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.contentlist,content_list));
-        listPopupWindow.setAnchorView(filter);
-        listPopupWindow.setModal(true);
-//        final ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.contentlist,content_list);
-//        dataAdapter.setDropDownViewResource(android.R.layout.list_content);
-
-//        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.contentlist,content_list));
-
-
-        filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listPopupWindow.show();
-//                dataAdapter.show();
-            }
-        });
-
-        request_btn = findViewById(R.id.button2);
-
-        request_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RequisitionActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-//        listView=findViewById(R.id.listView);
-//
     }
 
     @Override
@@ -124,7 +60,7 @@ public class BurgerMenu extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.burger_menu, menu);
+        getMenuInflater().inflate(R.menu.requisition, menu);
         return true;
     }
 
@@ -159,7 +95,7 @@ public class BurgerMenu extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
-//        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_send) {
 
         }
 
@@ -167,6 +103,4 @@ public class BurgerMenu extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
 }

@@ -44,7 +44,7 @@
         android:layout_marginBottom="16dp"
         android:text="Approved"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/notification_button"
         app:layout_constraintTop_toBottomOf="@+id/ItemOrderDate" />
 
     <ImageView
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Item_id" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/notification_button"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="16dp"
