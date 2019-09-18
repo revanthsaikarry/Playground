@@ -180,6 +180,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/textboxbackground"
             android:ems="10"
+            android:gravity="start"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -240,7 +241,7 @@
                 android:textColor="#747474" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/SomeOne_radiobtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -249,7 +250,7 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/SaveDraft"
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -261,11 +262,11 @@
             android:textColor="#595959"
             android:textSize="12sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintBottom_toTopOf="@+id/SaveDraftLine"
             app:layout_constraintStart_toStartOf="parent" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/SaveDraftLine"
             android:layout_width="70dp"
             android:layout_height="1dp"
             android:layout_marginStart="16dp"
@@ -277,7 +278,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/NextBtn"
             android:layout_width="100dp"
             android:layout_height="32dp"
             android:layout_marginEnd="24dp"

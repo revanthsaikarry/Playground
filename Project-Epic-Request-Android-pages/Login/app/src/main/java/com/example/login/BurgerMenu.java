@@ -3,6 +3,8 @@ package com.example.login;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.login.Global.RequestStatus;
+import com.example.login.Model.RequestModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -29,6 +31,7 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BurgerMenu extends AppCompatActivity
@@ -67,13 +70,46 @@ public class BurgerMenu extends AppCompatActivity
           filter=findViewById(R.id.filterOption);
         String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
 
+        ArrayList requestList = new ArrayList();
 
-        String[] dates={"12-aug","15-aug","22-aug","18-aug","22-jul","12-jul"};
-        String[] titles={"PUR-2019-056","PUR-2019-053","PUR-2019-065","PUR-2019-024","PUR-2019-015"};
-        String[] status = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
+        RequestModel requestModel = new RequestModel();
+        requestModel.setReq_no("PUR-2019-056");
+        requestModel.setRequestStatus(RequestStatus.APPROVED);
+        requestModel.setReq_date("12-aug");
+        requestList.add(requestModel);
+
+        RequestModel requestModel1 = new RequestModel();
+        requestModel.setReq_no("PUR-2019-053");
+        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setReq_date("15-aug");
+        requestList.add(requestModel1);
+
+        RequestModel requestModel2 = new RequestModel();
+        requestModel.setReq_no("PUR-2019-065");
+        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setReq_date("22-aug");
+        requestList.add(requestModel2);
+
+        RequestModel requestModel3 = new RequestModel();
+        requestModel.setReq_no("PUR-2019-024");
+        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setReq_date("18-aug");
+        requestList.add(requestModel3);
+
+        RequestModel requestModel4 = new RequestModel();
+        requestModel.setReq_no("PUR-2019-015");
+        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setReq_date("18-aug");
+        requestList.add(requestModel4);
+
+        RequestModel requestModel5 = new RequestModel();
+        requestModel.setReq_no("PUR-2019-035");
+        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setReq_date("24-aug");
+        requestList.add(requestModel5);
 
 
-        ListAdapter listAdapter=new MyListAdapter(getApplicationContext(),titles,dates,status);
+        ListAdapter listAdapter=new MyListAdapter(getApplicationContext(),requestList);
         listView.setAdapter(listAdapter);
 
 

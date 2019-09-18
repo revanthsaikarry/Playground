@@ -8,19 +8,25 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MyListAdapter extends BaseAdapter {
-    String titles[], dates[], status[];
-    private Context context;
+import com.example.login.Model.RequestModel;
 
-    public MyListAdapter(Context context, String[] title, String[] date, String[] status){
-        this.context=context;
-        this.titles=title;
-        this.dates=date;
-        this.status=status;
+import java.util.ArrayList;
+
+public class MyListAdapter extends BaseAdapter {
+
+
+    private Context context;
+    ArrayList<RequestModel> requestList;
+
+
+    public MyListAdapter(Context context, ArrayList<RequestModel> requestList) {
+        this.context = context;
+        this.requestList = requestList;
     }
+
     @Override
     public int getCount() {
-        return titles.length;
+        return requestList.size();
     }
 
     @Override
@@ -35,19 +41,25 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view= LayoutInflater.from(context).inflate(R.layout.orderlist_content,parent,false);
-        TextView title,date,statusText;
 
-        title=view.findViewById(R.id.orederId);
-        date=view.findViewById(R.id.orderDate);
-        statusText=view.findViewById(R.id.orderStatus);
-        ImageView imageView=view.findViewById(R.id.imageView3);
 
-        title.setText(String.valueOf(titles[position]));
-        date.setText(String.valueOf(dates[position]));
-        statusText.setText(String.valueOf(status[position]));
-        imageView.setImageResource(R.drawable.notification);
+        View view = LayoutInflater.from(context).inflate(R.layout.orderlist_content, parent, false);
+        TextView title, date, statusText;
 
-                return view;
+//        titles.add(requestModel.getReq_no());
+//        dates.add(requestModel.getReq_date());
+//        status.add(requestModel.getRequestStatus());
+
+        title = view.findViewById(R.id.orederId);
+        date = view.findViewById(R.id.orderDate);
+        statusText = view.findViewById(R.id.orderStatus);
+        ImageView imageView = view.findViewById(R.id.imageView3);
+
+            RequestModel requestModel = this.requestList.get(position);
+            title.setText(String.valueOf(requestModel.getReq_no()));
+            date.setText(String.valueOf(requestModel.getReq_date()));
+            statusText.setText(String.valueOf(requestModel.getRequestStatus()));
+            imageView.setImageResource(R.drawable.notification);
+            return view;
     }
 }
