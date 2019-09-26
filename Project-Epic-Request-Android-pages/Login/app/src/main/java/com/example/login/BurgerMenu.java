@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,7 +71,7 @@ public class BurgerMenu extends AppCompatActivity
           filter=findViewById(R.id.filterOption);
         String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
 
-        ArrayList requestList = new ArrayList();
+        final ArrayList requestList = new ArrayList();
 
         RequestModel requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-056");
@@ -78,40 +79,64 @@ public class BurgerMenu extends AppCompatActivity
         requestModel.setReq_date("12-aug");
         requestList.add(requestModel);
 
-        RequestModel requestModel1 = new RequestModel();
+        requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-053");
         requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
         requestModel.setReq_date("15-aug");
-        requestList.add(requestModel1);
+        requestList.add(requestModel);
 
-        RequestModel requestModel2 = new RequestModel();
+        requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-065");
-        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setRequestStatus(RequestStatus.REJECTED);
         requestModel.setReq_date("22-aug");
-        requestList.add(requestModel2);
+        requestList.add(requestModel);
 
-        RequestModel requestModel3 = new RequestModel();
+        requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-024");
-        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setRequestStatus(RequestStatus.DRAFT);
         requestModel.setReq_date("18-aug");
-        requestList.add(requestModel3);
+        requestList.add(requestModel);
 
-        RequestModel requestModel4 = new RequestModel();
+        requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-015");
         requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
         requestModel.setReq_date("18-aug");
-        requestList.add(requestModel4);
+        requestList.add(requestModel);
 
-        RequestModel requestModel5 = new RequestModel();
+        requestModel = new RequestModel();
         requestModel.setReq_no("PUR-2019-035");
-        requestModel.setRequestStatus(RequestStatus.AWAITING_APPROVAL);
+        requestModel.setRequestStatus(RequestStatus.APPROVED);
         requestModel.setReq_date("24-aug");
-        requestList.add(requestModel5);
+        requestList.add(requestModel);
 
 
         ListAdapter listAdapter=new MyListAdapter(getApplicationContext(),requestList);
         listView.setAdapter(listAdapter);
 
+
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
+
+
+
+                RequestModel request = (RequestModel) requestList.get(i);
+
+                Intent intent = new Intent(getApplicationContext(), RequisitionForm2.class);
+                Bundle requestDataBundle = new Bundle();
+                requestDataBundle.putString("RequestNumber", request.getReq_no());
+                requestDataBundle.putString("RequestDate", request.getReq_date());
+                requestDataBundle.putString("RequestStatus", request.getRequestStatus().toString());
+
+                intent.putExtra("request", requestDataBundle);
+                startActivity(intent);
+
+            }
+
+        });
 
 //        popup = findViewById(R.id.openPopup);
         listPopupWindow = new ListPopupWindow(getApplicationContext());
@@ -143,8 +168,7 @@ public class BurgerMenu extends AppCompatActivity
         });
 
 
-//        listView=findViewById(R.id.listView);
-//
+
     }
 
     @Override

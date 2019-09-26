@@ -40,7 +40,7 @@ public class MyListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int i, View convertView, ViewGroup parent) {
 
 
         View view = LayoutInflater.from(context).inflate(R.layout.orderlist_content, parent, false);
@@ -55,7 +55,7 @@ public class MyListAdapter extends BaseAdapter {
         statusText = view.findViewById(R.id.orderStatus);
         ImageView imageView = view.findViewById(R.id.imageView3);
 
-            RequestModel requestModel = this.requestList.get(position);
+            RequestModel requestModel = this.requestList.get(i);
             title.setText(String.valueOf(requestModel.getReq_no()));
             date.setText(String.valueOf(requestModel.getReq_date()));
             statusText.setText(String.valueOf(requestModel.getRequestStatus()));
