@@ -12,9 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FragmentRequestPage"
+            android:label="@string/title_activity_fragment_request_page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".RequisitionForm2"
             android:label="@string/title_activity_requisition_form2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RequisitionActivity"
             android:label="@string/title_activity_requisition"
@@ -39,6 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".RequestListPageFragment" />
     </application>
 
 </manifest>

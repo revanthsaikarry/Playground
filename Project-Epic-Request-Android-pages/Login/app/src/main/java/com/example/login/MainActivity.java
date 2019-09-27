@@ -1,6 +1,7 @@
 package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txt2;
     TextView forgotTxt;
     EditText editText;
+    TextView login_txt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,16 @@ public class MainActivity extends AppCompatActivity {
         txt2 = findViewById(R.id.textView6);
         forgotTxt = findViewById(R.id.textView5);
         editText = findViewById(R.id.editText2);
+        login_txt = findViewById(R.id.loginBtn);
+
+        login_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), FragmentRequestPage.class);
+                startActivity(intent);
+            }
+        });
+
 
         LoginBtn.setOnClickListener(new View.OnClickListener()
         {

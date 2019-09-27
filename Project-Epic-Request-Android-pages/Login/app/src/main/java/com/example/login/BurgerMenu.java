@@ -67,7 +67,7 @@ public class BurgerMenu extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-            listView=findViewById(R.id.listView);
+            listView=findViewById(R.id.listView1);
           filter=findViewById(R.id.filterOption);
         String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
 
@@ -170,6 +170,7 @@ public class BurgerMenu extends AppCompatActivity
 
 
     }
+
 
     @Override
     public void onBackPressed() {

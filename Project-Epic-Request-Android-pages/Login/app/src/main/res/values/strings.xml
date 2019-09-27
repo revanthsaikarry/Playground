@@ -21,5 +21,9 @@
     <string name="title_activity_requisition">RequisitionActivity</string>
     <string name="next_arrow">NEXT\u0020\u0020\u0020→</string>
     <string name="title_activity_requisition_form2">RequisitionForm2</string>
+    <string name="title_activity_fragment_request_page">FragmentRequestPage</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
