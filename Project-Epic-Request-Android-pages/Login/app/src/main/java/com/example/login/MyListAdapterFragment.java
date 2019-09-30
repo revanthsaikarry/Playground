@@ -8,23 +8,22 @@ import android.widget.BaseAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
+import com.example.login.Model.RequestModel;
+
 import java.util.ArrayList;
 
 class MyListAdapterFragment extends BaseAdapter {
-    ArrayList Item_desc, Item_qty, Item_date, Item_Cost;
+    ArrayList Items;
     private Context context;
 
-    public MyListAdapterFragment(Context context, ArrayList<String> item_desc, ArrayList<Integer> item_qty, ArrayList<String> item_date, ArrayList<Integer> item_cost) {
-           this.Item_Cost = item_cost;
-           this.Item_date = item_date;
-           this.Item_desc = item_desc;
-           this.Item_qty = item_qty;
+    public MyListAdapterFragment(Context context, ArrayList<String> item_desc) {
+           this.Items = item_desc;
            this.context = context;
     }
 
     @Override
     public int getCount() {
-        return Item_desc.size();
+        return Items.size();
     }
 
     @Override
@@ -46,6 +45,12 @@ class MyListAdapterFragment extends BaseAdapter {
         Item_qty = view1.findViewById(R.id.Item_qty);
         Item_cost = view1.findViewById(R.id.Item_cost);
         Item_date = view1.findViewById(R.id.Item_date);
+
+        RequestModel requestModel = (RequestModel) this.Items.get(i);
+        Item_desc.setText(String.valueOf(requestModel.getItems_desc()));
+        Item_cost.setText(String.valueOf(requestModel.getItems_cost()));
+        Item_date.setText(String.valueOf(requestModel.getItems_date()));
+        Item_qty.setText(String.valueOf(requestModel.getItems_qty()));
 
         return view1;
     }

@@ -1,6 +1,7 @@
 package com.example.login;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.example.login.Deligate.Request_Deligate;
@@ -63,8 +64,14 @@ public class FragmentRequestPage extends AppCompatActivity
         fragment.setRequestDelegate(this);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.request_fragment, fragment);
+        fragmentTransaction.replace(R.id.request_fragment, fragment);
         fragmentTransaction.commit();
+
+//        BlankFragment blankFragment = new BlankFragment();
+//        FragmentManager fragmentManager1 = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+//        fragmentTransaction1.replace(R.id.request_view_fragment,blankFragment);
+//        fragmentTransaction1.commit();
     }
 
 
@@ -127,11 +134,25 @@ public class FragmentRequestPage extends AppCompatActivity
 
     @Override
     public void OnClickRequestItem(RequestModel requestModel) {
-        RequestViewFragment requestViewFragment = new RequestViewFragment();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.request_fragment, requestViewFragment);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
+        int orientation = this.getResources().getConfiguration().orientation;
+
+        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+            RequestViewFragment requestViewFragment = new RequestViewFragment();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.request_fragment, requestViewFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
+        else {
+            RequestViewFragment requestViewFragment = new RequestViewFragment();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment3, requestViewFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+        }
     }
 }
