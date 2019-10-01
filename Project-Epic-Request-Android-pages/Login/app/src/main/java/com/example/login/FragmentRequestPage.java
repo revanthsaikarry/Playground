@@ -10,6 +10,7 @@ import com.example.login.Model.RequestModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -30,6 +31,7 @@ import android.view.Menu;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -60,18 +62,17 @@ public class FragmentRequestPage extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        RequestListPageFragment fragment = new RequestListPageFragment();
-        fragment.setRequestDelegate(this);
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.request_fragment, fragment);
-        fragmentTransaction.commit();
+        int orientation = this.getResources().getConfiguration().orientation;
 
-//        BlankFragment blankFragment = new BlankFragment();
-//        FragmentManager fragmentManager1 = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-//        fragmentTransaction1.replace(R.id.request_view_fragment,blankFragment);
-//        fragmentTransaction1.commit();
+            RequestListPageFragment fragment = new RequestListPageFragment();
+            fragment.setRequestDelegate(this);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.request_fragment, fragment);
+            fragmentTransaction.commit();
+
+
+
     }
 
 
@@ -83,6 +84,19 @@ public class FragmentRequestPage extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            Log.d("On config change", "PORTRAIT");
+
+        }
+        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
+            Log.d("On config change", "LANDSCAPE");
+        }
+
     }
 
     @Override
@@ -144,6 +158,7 @@ public class FragmentRequestPage extends AppCompatActivity
             fragmentTransaction.replace(R.id.request_fragment, requestViewFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
+            requestViewFragment.setDataStreching(requestModel);
         }
         else {
             RequestViewFragment requestViewFragment = new RequestViewFragment();
@@ -153,6 +168,7 @@ public class FragmentRequestPage extends AppCompatActivity
             fragmentTransaction.replace(R.id.fragment3, requestViewFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
+            requestViewFragment.setDataStreching(requestModel);
         }
     }
 }

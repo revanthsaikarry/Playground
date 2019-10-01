@@ -14,7 +14,8 @@
         <activity
             android:name=".FragmentRequestPage"
             android:label="@string/title_activity_fragment_request_page"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize"></activity>
         <activity
             android:name=".RequisitionForm2"
             android:label="@string/title_activity_requisition_form2"
@@ -30,7 +31,8 @@
             android:colorMode="@color/cardview_dark_background"
             android:icon="@color/cardview_dark_background"
             android:label=""
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -43,7 +45,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RequestListPageFragment" />
+        <!--<activity android:name=".RequestListPageFragment" />-->
     </application>
 
 </manifest>

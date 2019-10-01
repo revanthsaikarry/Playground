@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.login.Deligate.Request_Deligate;
 import com.example.login.Model.RequestModel;
@@ -24,7 +25,8 @@ public class RequestViewFragment extends Fragment {
 
     View rootView;
     ListView listView;
-
+    TextView Order_id, Order_Date, Order_Status;
+    private RequestModel requestModel3;
 
     public RequestViewFragment() {
         // Required empty public constructor
@@ -98,7 +100,18 @@ public class RequestViewFragment extends Fragment {
         ListAdapter listAdapter=new MyListAdapterFragment(rootView.getContext(), Items);
         listView.setAdapter(listAdapter);
 
+
+        Order_id = rootView.findViewById(R.id.request_no);
+        Order_Date = rootView.findViewById(R.id.Status_date);
+        Order_Status = rootView.findViewById(R.id.Status_txt);
+
+        Order_id.setText(requestModel3.getReq_no());
+        Order_Date.setText(requestModel3.getReq_date());
+        Order_Status.setText(requestModel3.getRequestStatus().toString());
+
         return rootView;
     }
-
+public void setDataStreching(RequestModel requestModel){
+        this.requestModel3 = requestModel;
+}
 }

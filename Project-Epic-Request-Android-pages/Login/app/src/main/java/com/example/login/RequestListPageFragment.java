@@ -126,6 +126,17 @@ public class RequestListPageFragment extends Fragment{
                 });
 
 
+        New_req_btn = rootView.findViewById(R.id.button2);
+
+        New_req_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(rootView.getContext(), RequisitionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
 
 
