@@ -1,16 +1,13 @@
 package com.example.login;
 
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
 import com.example.login.Deligate.Request_Deligate;
-import com.example.login.Global.RequestStatus;
 import com.example.login.Model.RequestModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.core.view.GravityCompat;
@@ -28,12 +25,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.Menu;
-import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class FragmentRequestPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, Request_Deligate {
@@ -68,7 +60,7 @@ public class FragmentRequestPage extends AppCompatActivity
             fragment.setRequestDelegate(this);
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.request_fragment, fragment);
+            fragmentTransaction.add(R.id.FrameLayoutFragment, fragment);
             fragmentTransaction.commit();
 
 
@@ -89,12 +81,26 @@ public class FragmentRequestPage extends AppCompatActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            Log.d("On config change", "PORTRAIT");
 
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+            RequestViewFragment requestViewFragment = new RequestViewFragment();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.FrameLayoutFragment, requestViewFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            //requestViewFragment.setDataStreching(requestModel);
         }
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
-            Log.d("On config change", "LANDSCAPE");
+        else {
+            RequestViewFragment requestViewFragment = new RequestViewFragment();
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.FragmentHolder, requestViewFragment);
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
+            //requestViewFragment.setDataStreching(requestModel);
         }
 
     }
@@ -155,7 +161,7 @@ public class FragmentRequestPage extends AppCompatActivity
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.request_fragment, requestViewFragment);
+            fragmentTransaction.replace(R.id.FrameLayoutFragment, requestViewFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             requestViewFragment.setDataStreching(requestModel);
@@ -165,7 +171,7 @@ public class FragmentRequestPage extends AppCompatActivity
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.replace(R.id.fragment3, requestViewFragment);
+            fragmentTransaction.add(R.id.FragmentHolder, requestViewFragment);
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
             requestViewFragment.setDataStreching(requestModel);

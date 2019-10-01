@@ -79,39 +79,23 @@ public class RequestViewFragment extends Fragment {
         Items.add(requestModel);
 
 
-//        Item_qty.add(01);
-//        Item_qty.add(01);
-//        Item_qty.add(01);
-//        Item_qty.add(01);
-//        Item_qty.add(01);
-
-//        Item_date.add("10 Jul 2019");
-//        Item_date.add("10 Jul 2019");
-//        Item_date.add("10 Jul 2019");
-//        Item_date.add("10 Jul 2019");
-//        Item_date.add("10 Jul 2019");
-
-//        Item_Cost.add(45000);
-//        Item_Cost.add(45000);
-//        Item_Cost.add(45000);
-//        Item_Cost.add(45000);
-//        Item_Cost.add(45000);
-
-        ListAdapter listAdapter=new MyListAdapterFragment(rootView.getContext(), Items);
+        ListAdapter listAdapter = new MyListAdapterFragment(rootView.getContext(), Items);
         listView.setAdapter(listAdapter);
 
 
         Order_id = rootView.findViewById(R.id.request_no);
         Order_Date = rootView.findViewById(R.id.Status_date);
         Order_Status = rootView.findViewById(R.id.Status_txt);
-
-        Order_id.setText(requestModel3.getReq_no());
-        Order_Date.setText(requestModel3.getReq_date());
-        Order_Status.setText(requestModel3.getRequestStatus().toString());
+        if (requestModel3 != null) {
+            Order_id.setText(requestModel3.getReq_no());
+            Order_Date.setText(requestModel3.getReq_date());
+            Order_Status.setText(requestModel3.getRequestStatus().toString());
+        }
 
         return rootView;
     }
-public void setDataStreching(RequestModel requestModel){
+
+    public void setDataStreching(RequestModel requestModel) {
         this.requestModel3 = requestModel;
-}
+    }
 }

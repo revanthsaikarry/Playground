@@ -15,7 +15,8 @@
             android:name=".FragmentRequestPage"
             android:label="@string/title_activity_fragment_request_page"
             android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize"></activity>
+
+            ></activity>
         <activity
             android:name=".RequisitionForm2"
             android:label="@string/title_activity_requisition_form2"
@@ -32,7 +33,8 @@
             android:icon="@color/cardview_dark_background"
             android:label=""
             android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            >
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
