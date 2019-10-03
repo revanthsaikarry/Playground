@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="@drawable/personviewbackground">
+
+    <FrameLayout
+        android:id="@+id/profilePicHolder"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:foreground="@drawable/personimageview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ApproverImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/personimageview"
+            app:srcCompat="@drawable/profilepic"
+            tools:layout_editor_absoluteX="97dp"
+            tools:layout_editor_absoluteY="0dp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/ApproverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Luke Ray"
+        android:textColor="#747474"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/profilePicHolder"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ApproverDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        android:text="Lorem ipsum doler sit amet."
+        android:textColor="#909090"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@+id/profilePicHolder"
+        app:layout_constraintTop_toBottomOf="@+id/ApproverName" />
+
+    <ImageView
+        android:id="@+id/AddBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/addbutton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

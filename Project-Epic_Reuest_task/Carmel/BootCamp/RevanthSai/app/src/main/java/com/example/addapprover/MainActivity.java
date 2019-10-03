@@ -1,8 +1,8 @@
-package com.example.login;
+package com.example.addapprover;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 
+import com.example.addapprover.AddApproverPageFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -24,13 +24,13 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.view.Menu;
 
-public class RequisitionActivity extends AppCompatActivity
+public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_requisition);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -49,20 +49,12 @@ public class RequisitionActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        Requisition_form1 requisition_form1 = new Requisition_form1();
+
+        AddApproverPageFragment addApproverPageFragment = new AddApproverPageFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.RequisitionHolder, requisition_form1);
-//        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.add(R.id.FragmentHolder, addApproverPageFragment);
         fragmentTransaction.commit();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
-
-        }
     }
 
     @Override
@@ -78,7 +70,7 @@ public class RequisitionActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.requisition, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
