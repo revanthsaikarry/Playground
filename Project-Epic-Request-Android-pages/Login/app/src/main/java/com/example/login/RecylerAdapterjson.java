@@ -36,7 +36,7 @@ class RecylerAdapterjson extends RecyclerView.Adapter<RecylerAdapterjson.MyViewH
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         MyViewHolder myViewHolder1= holder;
         try {
-            JSONArray jsonArray = jsonList.getJSONArray("request_data");
+            JSONArray jsonArray = jsonList.getJSONArray("data");
             JSONObject jsonObject = jsonArray.getJSONObject(position);
             myViewHolder1.setUpData1(jsonObject);
         } catch (JSONException e) {
@@ -47,12 +47,12 @@ class RecylerAdapterjson extends RecyclerView.Adapter<RecylerAdapterjson.MyViewH
 
     @Override
     public int getItemCount() {
-        return 10;
-//        try {
-//            return jsonList.getJSONArray("request_data").length();
-//        } catch (JSONException e) {
-//            return Integer.parseInt(null);
-//        }
+//        return 10;
+        try {
+            return jsonList.getJSONArray("data").length();
+        } catch (JSONException e) {
+            return Integer.parseInt(null);
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

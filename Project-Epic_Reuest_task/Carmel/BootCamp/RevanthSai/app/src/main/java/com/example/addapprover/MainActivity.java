@@ -2,7 +2,8 @@ package com.example.addapprover;
 
 import android.os.Bundle;
 
-import com.example.addapprover.AddApproverPageFragment;
+import com.example.addapprover.Deligate.AddApproverDeloigate;
+import com.example.addapprover.Model.PersonModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -25,7 +26,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, AddApproverDeloigate {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +49,14 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-
-        AddApproverPageFragment addApproverPageFragment = new AddApproverPageFragment();
+//        AddApproverFragment addApproverFragment = new AddApproverFragment();
+        RequisitionForm5 requisitionForm5fragment = new RequisitionForm5();
+        requisitionForm5fragment.setAddApprovarDeligate(this);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.FragmentHolder, addApproverPageFragment);
+        fragmentTransaction.add(R.id.fragmentHolder, requisitionForm5fragment);
         fragmentTransaction.commit();
     }
 
@@ -113,4 +116,28 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @Override
+    public void OnClickAddAppoverBtn() {
+        AddApproverFragment addApproverFragment = new AddApproverFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragmentHolder, addApproverFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    public void OnClickAddAppoverItem(PersonModel personModel) {
+
+    }
+
+//    public void OnClickAddApproverButton(){
+//        AddApproverFragment addApproverFragment = new AddApproverFragment();
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.fragmentHolder, addApproverFragment);
+//        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.commit();
+//    }
 }

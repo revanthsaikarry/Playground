@@ -1,0 +1,21 @@
+[{
+		"username": "carmel@gmail.com",
+		"password": "P@ssw0rd"
+	},
+	{
+		"username": 9846727118,
+		"password": "P@ssw0rd123"
+	},
+	{
+		"username": "demo@carmelsolutions.net",
+		"password": "123C@rmel"
+	},
+        {
+		"username": "test@carmelsolutions.net",
+		"password": "bootcamp456"
+	},
+        {
+		"username": 6876543218,
+		"password": "bootcampC@rmeL"
+	}
+]

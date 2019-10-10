@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/whitebackgroundwithborders"
+    tools:context=".RequisitionForm5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/whitebackgroundwithborders"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="REQUISITION"
+            android:textColor="#000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/dashedline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+            <TextView
+                android:id="@+id/page1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/whitecircle"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#D3D3D3"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/page2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/whitecircle"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#D3D3D3"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/page1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/page3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/whitecircle"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#D3D3D3"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/page2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/page4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/whitecircle"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="#D3D3D3"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/page3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/page5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/bluecircle"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="#FFFFFF"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/page4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/page6"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:background="@drawable/whitecircle"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="#D3D3D3"
+                android:textSize="10dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/page5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/whitebackgroundwithborders"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/save_draft_requisition5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="SAVE DRAFT"
+            android:textColor="#595959"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/cancel_action_Line"
+            android:layout_width="80dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:background="#595959"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/save_draft_requisition5"
+            app:layout_constraintStart_toStartOf="@+id/save_draft_requisition5"
+            app:layout_constraintTop_toBottomOf="@+id/save_draft_requisition5" />
+
+        <Button
+            android:id="@+id/next_btn_requisition5"
+            android:layout_width="75dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/buttonbackground"
+            android:text="NEXT  →"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F0F0F0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/approvalsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="APPROVAL(S)"
+            android:textColor="#505050"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/approvalsTitle" />
+
+        <ImageView
+            android:id="@+id/addApproverBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:src="@drawable/addbutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/addApproverText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="ADD APPROVER"
+            android:textColor="#505050"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addApproverBtn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/appoverList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/whitebackgroundwithborders"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="0.0" />
+</androidx.constraintlayout.widget.ConstraintLayout>

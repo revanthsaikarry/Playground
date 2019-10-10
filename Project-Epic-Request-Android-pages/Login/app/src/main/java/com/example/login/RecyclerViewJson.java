@@ -23,14 +23,16 @@ import org.json.JSONObject;
 public class RecyclerViewJson extends AppCompatActivity {
 
     Button loadBtn;
-    String url="https://myfirstewebsite.000webhostapp.com/RequestJSONfile1.json";
+    String url="https://myfirstewebsite.000webhostapp.com/RequestJSONfile.json";
     RecyclerView recyclerView;
-//    RecyclerView.Adapter recyleViewAdapter;
+    RecyclerView.Adapter recyleViewAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view_json);
+
+
 
         recyclerView=findViewById(R.id.recyclerViewjson);
         loadBtn = findViewById(R.id.loadButton);
@@ -60,8 +62,8 @@ public class RecyclerViewJson extends AppCompatActivity {
         try {
             JSONObject jsonObject = new JSONObject(response);
 //            RecylerAdapterjson recyleViewAdapter = new RecylerAdapterjson(getApplicationContext(),jsonObject);
-            RecylerAdapterjson myRecylerAdapter = new RecylerAdapterjson(getApplicationContext(),jsonObject);
-            recyclerView.setAdapter(myRecylerAdapter);
+            recyleViewAdapter = new RecylerAdapterjson(getApplicationContext(),jsonObject);
+            recyclerView.setAdapter(recyleViewAdapter);
         } catch (JSONException e) {
             e.printStackTrace();
         }

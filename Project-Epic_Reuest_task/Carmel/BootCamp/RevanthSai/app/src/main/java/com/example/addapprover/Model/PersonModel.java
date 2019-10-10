@@ -1,4 +1,4 @@
-package com.carmel.Revanth.Model;
+package com.example.addapprover.Model;
 
 import java.io.Serializable;
 

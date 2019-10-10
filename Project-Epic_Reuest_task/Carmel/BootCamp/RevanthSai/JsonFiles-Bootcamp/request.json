@@ -1,0 +1,51 @@
+[{
+		"RequestNo": "PUR-2019-056",
+		"Status": "APPROVED",
+		"SubmittedDate": "06 Jul 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-051",
+		"Status": "DRAFT",
+		"SubmittedDate": "11 APR 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-042",
+		"Status": "REJECTED",
+		"SubmittedDate": "04 Jun 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-019",
+		"Status": "AWAITING APPROVAL",
+		"SubmittedDate": "04 OCT 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-042",
+		"Status": "APPROVED",
+		"SubmittedDate": "04 AUG 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-052",
+		"Status": "AWAITING APPROVAL",
+		"SubmittedDate": "21 MAR 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-056",
+		"Status": "REJECTED",
+		"SubmittedDate": "23 SEP 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-042",
+		"Status": "DRAFT",
+		"SubmittedDate": "04 Jun 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-069",
+		"Status": "APPROVED",
+		"SubmittedDate": "29 JUL 2019"
+	},
+	{
+		"RequestNo": "PUR-2019-022",
+		"Status": "APPROVED",
+		"SubmittedDate": "11 MAY 2018"
+	}
+]
