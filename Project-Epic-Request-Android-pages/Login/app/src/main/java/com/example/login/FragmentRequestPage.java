@@ -54,7 +54,6 @@ public class FragmentRequestPage extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        int orientation = this.getResources().getConfiguration().orientation;
 
             RequestListPageFragment fragment = new RequestListPageFragment();
             fragment.setRequestDelegate(this);

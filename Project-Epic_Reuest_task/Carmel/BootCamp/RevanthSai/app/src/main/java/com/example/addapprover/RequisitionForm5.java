@@ -4,8 +4,6 @@ package com.example.addapprover;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.addapprover.Deligate.AddApproverDeloigate;
+import com.example.addapprover.Model.PersonModel;
 
 import java.util.ArrayList;
 
@@ -30,6 +28,7 @@ public class RequisitionForm5 extends Fragment {
     AddApproverDeloigate addApproverDeligate;
     RecyclerView selectedApprovarsList;
     RecyclerView.Adapter recyclerAdapter;
+    PersonModel personModel;
 
     public RequisitionForm5() {
         // Required empty public constructor
@@ -42,6 +41,7 @@ public class RequisitionForm5 extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_requisition_form5, container, false);
 
+        selectedApprovarsList = rootView.findViewById(R.id.appoverList);
         AddApproverBtn = rootView.findViewById(R.id.addApproverBtn);
 
         AddApproverBtn.setOnClickListener(new View.OnClickListener() {
@@ -52,27 +52,35 @@ public class RequisitionForm5 extends Fragment {
                 }
             }
         });
-        ArrayList<String> selectedAppovarsName = new ArrayList<String>();
-        ArrayList<String> selectedAppovarsDetails = new ArrayList<String>();
-        String personName, personDetails;
 
+        ArrayList<PersonModel> selectedAppovars = new ArrayList<>();
+        personModel = new PersonModel();
+        personModel.setPerson_name("Luke rey");
+        personModel.setPerson_details("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
+        selectedAppovars.add(personModel);
 
-        Bundle bundle = this.getArguments();
-        if (bundle != null){
-            personName = bundle.getString("Person_name");
-            selectedAppovarsName.add(personName);
-            personDetails = bundle.getString("Person_Details");
-            selectedAppovarsDetails.add(personDetails);
-            recyclerAdapter = new RecylerAdapter1(rootView.getContext(), selectedAppovarsName, selectedAppovarsDetails);
-            selectedApprovarsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-            selectedApprovarsList.setItemAnimator(new DefaultItemAnimator());
-            selectedApprovarsList.setAdapter(recyclerAdapter);
-        }
+        personModel = new PersonModel();
+        personModel.setPerson_name("Daisy Lake");
+        personModel.setPerson_details("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
+        selectedAppovars.add(personModel);
+
+        personModel = new PersonModel();
+        personModel.setPerson_name("Mark Smith");
+        personModel.setPerson_details("Lorem ipsum dolor sit amet, consectetur adipiscing elit");
+        selectedAppovars.add(personModel);
+
+        recyclerAdapter = new RecylerAdapter1(rootView.getContext(), selectedAppovars);
+        selectedApprovarsList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
+        selectedApprovarsList.setAdapter(recyclerAdapter);
+
 
 
         return rootView;
     }
     public void setAddApprovarDeligate(AddApproverDeloigate addApprovarDeligate1){
         this.addApproverDeligate = addApprovarDeligate1;
+    }
+    public void setApproverData(PersonModel personModel){
+        this.personModel = personModel;
     }
 }

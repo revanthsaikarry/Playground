@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,14 +17,13 @@ import java.util.ArrayList;
 
 class RecylerAdapter1 extends RecyclerView.Adapter {
     private Context context;
-    ArrayList<String> ApprovarsName;
-    ArrayList<String> ApprovarsDetails;
+    ArrayList<PersonModel> ApprovarsSelected;
+//    Button deleteBtn;
 
 
-    public RecylerAdapter1(Context context, ArrayList<String> selectedAppovarsName, ArrayList<String> selectedAppovarsDetails) {
+    public RecylerAdapter1(Context context, ArrayList<PersonModel> personModel) {
         this.context = context;
-        this.ApprovarsName = selectedAppovarsName;
-        this.ApprovarsDetails = selectedAppovarsDetails;
+        this.ApprovarsSelected = personModel;
     }
 
     @NonNull
@@ -38,12 +38,13 @@ class RecylerAdapter1 extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         RecylerAdapter1.MyViewHolder myViewHolder = (RecylerAdapter1.MyViewHolder)holder;
-        myViewHolder.setUpData(String.valueOf(ApprovarsName.get(position)),String.valueOf(ApprovarsDetails.get(position)));
+        PersonModel personModel = this.ApprovarsSelected.get(position);
+        myViewHolder.setUpData(personModel);
     }
 
     @Override
     public int getItemCount() {
-        return ApprovarsName.size();
+        return ApprovarsSelected.size();
     }
 
     private class MyViewHolder extends RecyclerView.ViewHolder  {
@@ -55,11 +56,24 @@ class RecylerAdapter1 extends RecyclerView.Adapter {
 
             ApproverName = view.findViewById(R.id.ApproverViewName);
             ApproverDetails = view.findViewById(R.id.ApproverViewDetails);
+            deleteBtn = view.findViewById(R.id.deleteBtn);
+
+            deleteBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    delete(getAdapterPosition());
+                }
+            });
         }
 
-        public void setUpData(String ApproversName, String ApproversDetails) {
-            ApproverName.setText(ApproversName);
-            ApproverDetails.setText(ApproversDetails);
+        private void delete(int adapterPosition) {
+            ApproverName.endBatchEdit();
+            notifyItemRemoved(adapterPosition);
+        }
+
+        public void setUpData(PersonModel personModel) {
+            ApproverName.setText(String.valueOf(personModel.getPerson_name()));
+            ApproverDetails.setText(String.valueOf(personModel.getPerson_details()));
         }
     }
 }

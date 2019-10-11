@@ -28,6 +28,8 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, AddApproverDeloigate {
 
+        RecylerAdapter recylerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,16 +130,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void OnClickAddAppoverItem(PersonModel personModel) {
-
+    public void OnClickAddAppoverItem() {
+        RequisitionForm5 requisitionForm5= new RequisitionForm5();
+        FragmentManager fragmentManager1 = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+        fragmentTransaction1.add(R.id.fragmentHolder, requisitionForm5);
+        fragmentTransaction1.addToBackStack(null);
+        fragmentTransaction1.commit();
     }
-
-//    public void OnClickAddApproverButton(){
-//        AddApproverFragment addApproverFragment = new AddApproverFragment();
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//        fragmentTransaction.replace(R.id.fragmentHolder, addApproverFragment);
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//    }
 }

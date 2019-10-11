@@ -50,7 +50,9 @@
             }
         }
         function init5(){
+            if(document.getElementById("search_id").value!== null){
             var Search_text = document.getElementById("search_id").value;
+        }else if(document.getElementById("search_id").value === null){Search_text = null;}
             var person_name = document.getElementsByClassName("person_name");
             var people = document.getElementsByClassName("people1");
             var search = document.getElementById("search_not_found");
@@ -62,10 +64,12 @@
             var value = document.querySelector('.person_name');
             
             // alert(Search_text);
+            if(Search_text !== null){
+                console.log("some search");
                for(i=0;i<persons;i++){ 
 
                     console.log("entered loop");
-                    if(Search_text.toUpperCase() === person_name[i].textContent.toUpperCase()){
+                    if(Search_text.toUpperCase().trim() === person_name[i].textContent.toUpperCase().trim()){
 
                         console.log("entered if");
                         people[i].style.display = "flex";
@@ -82,7 +86,12 @@
                     search.style.display = "none";
                 }
             }
-        
+        }else{
+            console.log("nothing");
+            for(i=0;i<persons;i++){
+                people[i].style.display = "flex";
+            }
+        }
         }
     </script>
 </head>

@@ -4,5 +4,5 @@ import com.example.addapprover.Model.PersonModel;
 
 public interface AddApproverDeloigate {
     void OnClickAddAppoverBtn();
-    void OnClickAddAppoverItem(PersonModel personModel);
+    void OnClickAddAppoverItem();
 }
