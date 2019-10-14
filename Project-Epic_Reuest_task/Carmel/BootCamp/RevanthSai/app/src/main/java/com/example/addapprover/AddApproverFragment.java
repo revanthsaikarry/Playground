@@ -44,7 +44,7 @@ public class AddApproverFragment extends Fragment  {
     ArrayList selectedList;
     PersonModel personModel;
     public ImageView profile_img, Addbutton_img, Remove_btn;
-    TextView selectionCount;
+    TextView cancel;
     ArrayList<PersonModel> selected_per = new ArrayList<PersonModel>();
     ArrayList<PersonModel> selectedArray = new ArrayList<>();
 
@@ -134,7 +134,7 @@ public class AddApproverFragment extends Fragment  {
                     FragmentManager fragmentManager1 = getFragmentManager();
                     FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
                     fragmentTransaction1.replace(R.id.fragmentHolder2, searchOption);
-                    fragmentTransaction1.addToBackStack(null);  
+                    fragmentTransaction1.addToBackStack(null);
                     fragmentTransaction1.commit();
                     String searchTxt= search_text.getText().toString().trim().toUpperCase();
 
@@ -144,14 +144,33 @@ public class AddApproverFragment extends Fragment  {
 
 //        Addbutton_img = rootView.findViewById(R.id.AddBtn);
         doneBtn = rootView.findViewById(R.id.doneBtn);
+        cancel = rootView.findViewById(R.id.save_draft_requisition5);
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("DONE", "onClick: BUTTON Clicked");
-                if(addApproverDeloigate != null){
-                    Log.d("If", "onClick: entered iff");
-                    addApproverDeloigate.OnClickAddAppoverItem();
-                }
+                RequisitionForm5 requisitionForm5= new RequisitionForm5();
+                FragmentManager fragmentManager1 = getFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.add(R.id.fragmentHolder, requisitionForm5);
+                fragmentTransaction1.addToBackStack(null);
+                fragmentTransaction1.commit();
+//                if(addApproverDeloigate != null){
+//                    Log.d("If", "onClick: entered iff");
+//                    addApproverDeloigate.OnClickAddAppoverItem();
+//                }
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RequisitionForm5 requisitionForm5= new RequisitionForm5();
+                FragmentManager fragmentManager1 = getFragmentManager();
+                FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                fragmentTransaction1.add(R.id.fragmentHolder, requisitionForm5);
+                fragmentTransaction1.addToBackStack(null);
+                fragmentTransaction1.commit();
             }
         });
 //

@@ -131,11 +131,5 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void OnClickAddAppoverItem() {
-        RequisitionForm5 requisitionForm5= new RequisitionForm5();
-        FragmentManager fragmentManager1 = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
-        fragmentTransaction1.add(R.id.fragmentHolder, requisitionForm5);
-        fragmentTransaction1.addToBackStack(null);
-        fragmentTransaction1.commit();
     }
 }
