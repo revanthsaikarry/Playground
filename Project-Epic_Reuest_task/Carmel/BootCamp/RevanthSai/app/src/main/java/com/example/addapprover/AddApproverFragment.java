@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,28 +43,14 @@ public class AddApproverFragment extends Fragment  {
     String count;
     ArrayList selectedList;
     PersonModel personModel;
-    PersonModel personModel1;
     public ImageView profile_img, Addbutton_img, Remove_btn;
     TextView selectionCount;
     ArrayList<PersonModel> selected_per = new ArrayList<PersonModel>();
     ArrayList<PersonModel> selectedArray = new ArrayList<>();
-    TextView person_name, person_details;
+
 
 
     String Url = "https://myfirstewebsite.000webhostapp.com/people.json";
-
-
-    public static final String PeopleListJson="{\"data\": " +
-            "[{\"name\":\"Luke Ray\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Daisy Lake\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Mark SMith\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Richard Keys\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Amith Sharma\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Shruthi Iyer\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}, " +
-            "{\"name\":\"Kumar Sravan\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Ananya Pandit\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Peter Dcruz\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}," +
-            "{\"name\":\"Hussain Mallik\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit\"}]}";
 
     public void setCount(String count){
         this.count = count;
@@ -79,43 +67,13 @@ public class AddApproverFragment extends Fragment  {
         // Inflate the layout for this fragment
             rootView = inflater.inflate(R.layout.fragment_add_approver_page, container, false);
 
-            peopleList = rootView.findViewById(R.id.PeopleList);
-//            ArrayList<String> name = new ArrayList();
-//            ArrayList<String> desc = new ArrayList();
-            person_name = rootView.findViewById(R.id.ApproverName);
-            person_details = rootView.findViewById(R.id.ApproverDetails);
-            selectionCount = rootView.findViewById(R.id.selectedCount);
-
-        try {
-            JSONObject peoplelistjson = new JSONObject(PeopleListJson);
-            JSONArray jsonArray = peoplelistjson.getJSONArray("data");
-
-            final ArrayList people =new ArrayList();
-            for(int i=0;i< jsonArray.length();i++){
-                JSONObject jsonObject=jsonArray.getJSONObject(i);
-                PersonModel personModel = new PersonModel();
-
-                String name1 = jsonObject.optString("name");
-                String decs = jsonObject.optString("description");
-
-//                name.add(name1);
-//                desc.add(decs);
-
-                personModel.setPerson_name(name1);
-                personModel.setPerson_details(decs);
-                people.add(personModel);
-
-            }
-            recyclerAdapter= new RecylerAdapter(rootView.getContext(), people);
-            peopleList.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
-            peopleList.setItemAnimator(new DefaultItemAnimator());
-            peopleList.setAdapter(recyclerAdapter);
-            recyclerAdapter.notifyDataSetChanged();
 
 
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        RecylerListFragment recylerListFragment = new RecylerListFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.fragmentHolder2, recylerListFragment);
+        fragmentTransaction.commit();
 
 //        StringRequest request=new StringRequest(Url, new Response.Listener<String>() {
 //            @Override
@@ -168,19 +126,19 @@ public class AddApproverFragment extends Fragment  {
             search_text = rootView.findViewById(R.id.searchTxt);
             searchView =  rootView.findViewById(R.id.searchBtn);
 
+
             searchView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    SearchOption searchOption = new SearchOption();
+                    FragmentManager fragmentManager1 = getFragmentManager();
+                    FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                    fragmentTransaction1.replace(R.id.fragmentHolder2, searchOption);
+                    fragmentTransaction1.addToBackStack(null);  
+                    fragmentTransaction1.commit();
+                    String searchTxt= search_text.getText().toString().trim().toUpperCase();
 
-//                    String searchTxt = search_text.getText().toString().trim().toUpperCase();
-//                    String peopleTxt = personModel1.getPerson_name().trim().toUpperCase();
-//                    if (searchTxt == peopleTxt){
-//                        int i=people.indexOf(peopleTxt);
-//                        peopleList.setVisibility(i);
-//                    }else {
-//                        peopleList.removeAllViews();
-//                    }
-//
+                        searchOption.searchPeople(searchTxt);
                 }
             });
 
@@ -205,7 +163,7 @@ public class AddApproverFragment extends Fragment  {
 //            selected_per.add(personModel1);
 //        }
 
-        selectionCount.setText(count);
+//        selectionCount.setText(count);
         return rootView;
 
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,8 @@ class RecylerAdapter extends RecyclerView.Adapter {
     JSONObject jsonList;
     ArrayList selectedList;
     PersonModel personModel;
+    EditText searchPeople;
+    ImageView searchBtn;
 
     public RecylerAdapter(Context context, ArrayList name, ArrayList people) {
         this.context=context;
@@ -48,7 +51,7 @@ class RecylerAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-            MyViewHolder myViewHolder= (MyViewHolder) holder;
+             MyViewHolder myViewHolder= (MyViewHolder) holder;
                 PersonModel personModel = (PersonModel) this.peoples_list.get(position);
                 myViewHolder.setUpData(personModel);
     }
@@ -81,6 +84,8 @@ class RecylerAdapter extends RecyclerView.Adapter {
             profile_img = itemView.findViewById(R.id.ApproverImg);
             Addbutton_img = itemView.findViewById(R.id.AddBtn);
             done_btn = itemView.findViewById(R.id.doneBtn);
+            searchPeople = itemView.findViewById(R.id.searchTxt);
+            searchBtn = itemView.findViewById(R.id.searchBtn);
             selectionCount = (TextView) itemView.findViewById(R.id.selectedCount);
             final String selected_person;
 
@@ -149,10 +154,10 @@ class RecylerAdapter extends RecyclerView.Adapter {
         }
 
 
-        public void setUpData(PersonModel personModel) {
-            person_name.setText(String.valueOf(personModel.getPerson_name()));
-            person_details.setText(String.valueOf(personModel.getPerson_details()));
-        }
+        public void setUpData(final PersonModel personModel) {
+                        person_name.setText(String.valueOf(personModel.getPerson_name()));
+                        person_details.setText(String.valueOf(personModel.getPerson_details()));
+                    }
     }
 
     public void selected_person(PersonModel personModel) {
