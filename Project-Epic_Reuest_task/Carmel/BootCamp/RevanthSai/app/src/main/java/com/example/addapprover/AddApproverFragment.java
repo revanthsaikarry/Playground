@@ -46,8 +46,7 @@ public class AddApproverFragment extends Fragment  {
     public ImageView profile_img, Addbutton_img, Remove_btn;
     TextView cancel;
     ArrayList<PersonModel> selected_per = new ArrayList<PersonModel>();
-    ArrayList<PersonModel> selectedArray = new ArrayList<>();
-
+    ArrayList<String> selected_people = new ArrayList<>();
 
 
     String Url = "https://myfirstewebsite.000webhostapp.com/people.json";
@@ -142,7 +141,6 @@ public class AddApproverFragment extends Fragment  {
                 }
             });
 
-//        Addbutton_img = rootView.findViewById(R.id.AddBtn);
         doneBtn = rootView.findViewById(R.id.doneBtn);
         cancel = rootView.findViewById(R.id.save_draft_requisition5);
         doneBtn.setOnClickListener(new View.OnClickListener() {
@@ -190,4 +188,7 @@ public class AddApproverFragment extends Fragment  {
 //        this.personModel1 = personModel;
 //    }
 
+//    public void selected_person(ArrayList persons_name) {
+//        this.selected_people = persons_name;
+//    }
 }

@@ -119,38 +119,9 @@ class RecylerAdapter extends RecyclerView.Adapter {
                             selected_per.add((Integer) Addbutton_img.getTag());
                             break;
                     }
-
-
-//                    for(int i=0;i<selected_per.size();i++){
-//                        if(selected_per.get(i)==0){
-//                            count = count+1;
-//                        }else if (selected_per.get(i)==1){
-//                            count = count-1;
-//                        }
-//                    }
-
-                    if(count != 0){
-                        Log.d("selected", +count+"onClick: +count+");
-                        str = count+" selected";
-                    }else if (count < 0){
-                        Log.d("none selected", "onClick: NONE");
-                        str = "None Selected";
-                    }
-                    PersonModel personModel;
-                    for (int i = 0; i < selected_per.size(); i++) {
-                        if (selected_per.get(i) == 0) {
-                            personModel = new PersonModel();
-                            personModel.setPerson_name(String.valueOf(person_name.getText()));
-                            personModel.setPerson_details(String.valueOf(person_details.getText()));
-                            requisitionForm5.setApproverData(personModel);
-                        } else if (selected_per.get(i) == 1) {
-                            count = count - 1;
-                        }
-                    }
                 }
 
             });
-            addApproverFragment.setCount(str);
         }
 
 
@@ -160,12 +131,5 @@ class RecylerAdapter extends RecyclerView.Adapter {
                     }
     }
 
-    public void selected_person(PersonModel personModel) {
-            this.personModel = personModel;
-            selectedList.add(String.valueOf(personModel));
-        for (int j = 0; j < selectedList.size(); j++) {
-            Log.d("Array", "onClick: " + selectedList.get(j));
-        }
-    }
-
 }
+
