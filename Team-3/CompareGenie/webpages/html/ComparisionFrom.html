@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CompareGeinie Homepage</title>
+    <link rel="stylesheet" type="text/css" href="../css/comparisionform2.css">
+    <script>
+        function addparam(){
+            document.getElementById("Add-parameter-frame").style.display = "block";
+        }
+        function addproduct(){
+            document.getElementById("Add-product-frame").style.display = "block";
+        }
+        function initclose(){
+            document.getElementById("Add-parameter-frame").style.display = "none";
+            document.getElementById("Add-product-frame").style.display = "none";
+        }
+        function addparamrow(){
+         var parameter = document.getElementById("parameter").value;
+         if(parameter =! null){
+             var table = document.getElementById("comparision-table");
+             var row = table.insertRow(1);
+             var cell1 = row.insertCell(0);
+             var cell2 = row.insertCell(1);
+             document.getElementById("Add-parameter-frame").style.display = "none";
+         }   
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div style="display: flex; justify-content: center; margin-top: 1vw;">
+        <span class="project-title" style="font-family: Berlin Sans FB; font-size: 2vw; font-weight: 900; text-shadow: 1px 1px #00000016; color: #00000050;">
+            CompareGeinie
+        </span>
+    </div>
+    <p id="filenamep" style="color: #707070; margin-top: 2%; margin-left: 3%;">Laptop</p>
+    <table id="comparision-table" style="margin-top: 1%; margin-left: 5%;">
+        <tr>
+            <td>
+                <div style="display: flex; align-items: center;"><span style="margin-right: 5px;">ADD PARAMETER</span> <img src="../request-icons-10.png" width="20" height="20" onclick="addparam()"/></div>
+            </td>
+            <td style="border-right: 0px;">
+                <div style="display: flex; align-items: center;"><span style="margin-right: 5px;">ADD PRODUCT</span> <img src="../request-icons-10.png" width="20" height="20" onclick="addproduct()"/></div>
+            </td>
+        </tr>
+    </table>
+    <div class="Add-parameter-frame" id="Add-parameter-frame">
+        <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style=" margin: 1%;" onclick="initclose()"/></div>
+        <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
+            ADD PARAMETER:
+        </p>
+        <input type="text" placeholder="Ex: color" id="parameter"/>
+        <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PARAMETER" onclick="addparamrow()">
+    </div>
+    <div class="Add-product-frame" id="Add-product-frame">
+            <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style="margin: 1%;" onclick="initclose()"/></div>
+            <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
+                ADD PRODUCT:
+            </p>
+            <input type="text" placeholder="Ex: color" id="parameter"/>
+            <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT">
+        </div>
+    
+
+    <div class="bottom-box">
+            <div style="display: flex; align-items: center;"><span style="font-size: 1.6vw; color:#0011F8;"><</span><a href="compreGeinie.html" style="font-size: 1vw; text-decoration: none; margin: 3px; color: #0011F8;">BACK</a></div>
+            <div style="display: flex; align-items: center;"><input type="button" style="border-radius: 25px; width: 150px; padding: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;" value="NEXT&nbsp;&#8594;"></div>
+        </div>
+    </div>
+</body>
+</html>

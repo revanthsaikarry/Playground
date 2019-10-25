@@ -3,6 +3,19 @@
 <head>
     <title>CompareGeinie Homepage</title>
     <link rel="stylesheet" type="text/css" href="../css/form1.css">
+    <script>
+        function init(){
+          var filename = document.getElementById("filename").value;
+          filename = filename.trim();
+          localStorage.setItem("filename1", "filename");
+          if(filename === ""){
+                document.getElementById("alert-msg").style.visibility = "visible";
+          }  else{
+              location.href = "ComparisionFrom.html";
+              document.getElementById("alert-msg").style.visibility = "hidden";
+          }
+        }
+    </script>
 </head>
 <body>
     <div class="main">
@@ -18,15 +31,16 @@
             <p style="font-size: 1.2vw; color: #5A5A5A; margin-left: 4%; margin-top: 5%;">
                 File Name:<span style="color: #FE0000;">*</span>
             </p>
-            <input type="text" placeholder="Ex: Laptop"/>
-            <p style="font-size: 1.2vw; color: #5A5A5A; margin-left: 4%; margin-top: 3%;">
+            <input type="text" placeholder="Ex: Laptop" id="filename">
+            <div class="triangle-up" id="alert-msg"><p>&#9888;   This field is required</p></div><br>
+            <p style="font-size: 1.2vw; color: #5A5A5A; margin-left: 4%; margin-top: 2%;">
                 Brief Description:    
             </p>
-            <textarea rows="4" cols="83"  placeholder="Brief About Your Project..." style="resize: none; margin-left: 4%; margin-top: 2%;"></textarea>     
+            <textarea rows="4" cols="85"  placeholder="Brief About Your Project..." style="resize: none; margin-left: 4%; margin-top: 2%;"></textarea>     
         </div>
         <div class="bottom-box">
-            <div style="display: flex; align-items: center;"><span style="font-size: 1.6vw;"><</span><a href="" style="text-decoration: none; margin: 3px;">BACK</a></div>
-            <div style="display: flex; align-items: center;"><a href="" style="text-decoration: none; margin: 3px;">NEXT</a><span style="font-size: 1.6vw;">></span></div>                   
+            <div style="display: flex; align-items: center;"><span style="font-size: 1.6vw; color:#0011F8;"><</span><a href="compreGeinie.html" style="font-size: 1vw; text-decoration: none; margin: 3px; color: #0011F8;">BACK</a></div>
+            <div style="display: flex; align-items: center;"><input type="button" style="border-radius: 25px; width: 150px; padding: 10px; background-color: #32BDD2; border: #32BDD2; -webkit-text-fill-color: aliceblue;" value="NEXT&nbsp;&#8594;" onclick="init();"></div>
         </div>
     </div>
 </body>

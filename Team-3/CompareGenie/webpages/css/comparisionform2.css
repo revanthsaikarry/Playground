@@ -1,0 +1,50 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-color: #F6F8F9;
+} 
+.main{
+    /* height: 100%; */
+    margin: 1% 1% 1% 1%;
+    background-color: #ffffff;
+    border: solid 1px #00000034;
+    box-shadow: 1px 1px 1px 1px #D3D3D3;
+}
+.bottom-box{
+    display: flex;
+    justify-content: space-between;
+    margin: 25% 3% 2% 3%;
+}
+table td{
+    border-right:solid 2px #707070;
+    padding: 2vw;
+}
+.Add-parameter-frame{
+    display: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 30%;
+    position: absolute;
+    border: solid 1px #70707050;
+    margin-left: 35%;
+    box-shadow: 1px 1px 1px 600px #70707060;
+}
+.Add-product-frame{
+    display: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 30%;
+    position: absolute;
+    border: solid 1px #70707050;
+    margin-left: 35%;
+    box-shadow: 1px 1px 1px 600px #70707060;
+}
+input[type=text]{
+    border-radius: 4px;
+    margin: 1% 4% 4% 4%;
+    width: 65%;
+    border: solid 1px #70707050; 
+    padding: 5px;
+}
