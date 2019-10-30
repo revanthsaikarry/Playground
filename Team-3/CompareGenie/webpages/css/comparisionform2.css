@@ -21,6 +21,9 @@ table td{
     border-right:solid 2px #707070;
     padding: 2vw;
 }
+table th{
+    border-right: solid 2px #707070;
+}
 .Add-parameter-frame{
     display: none;
     border-radius: 5px;
