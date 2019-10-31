@@ -32,7 +32,7 @@ table th{
     position: absolute;
     border: solid 1px #70707050;
     margin-left: 35%;
-    box-shadow: 1px 1px 1px 600px #70707060;
+    box-shadow: 1px 1px 1px 1500px #70707060;
 }
 .Add-product-frame{
     display: none;
@@ -42,7 +42,7 @@ table th{
     position: absolute;
     border: solid 1px #70707050;
     margin-left: 35%;
-    box-shadow: 1px 1px 1px 600px #70707060;
+    box-shadow: 1px 1px 1px 1600px #70707060;
 }
 input[type=text]{
     border-radius: 4px;

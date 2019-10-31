@@ -17,22 +17,60 @@
         function addparamrow(){
          var parameter = document.getElementById("parameter").value;
          const param = parameter.toString().toUpperCase().trim();
-         if(parameter =! null){
-             var table = document.getElementById("comparision-table");
+         if(parameter === ""){
+             alert("not a valid parameter");
+         }else{
+            var table = document.getElementById("comparision-table");
              var n = document.getElementById("comparision-table").getElementsByTagName("tr").length;
              console.log(n);
+                var i;
                 var row = table.insertRow(n);
-                var cell1 = row.insertCell(0);
-                cell1.innerHTML = param;
-                document.getElementById("Add-parameter-frame").style.display = "none";
+                var m = document.getElementById("comparision-table").rows[0].cells.length;
+                console.log(m);
+                if(m>1){
+                    var cell1 = row.insertCell(0);
+                    var img = document.createElement('INPUT');
+                    img.type = 'button';
+                    img.value = '🚫';
+                    img.id ="move-down-btn";
+                    cell1.innerHTML = param;
+                    cell1.appendChild(img);
+                    for(i=1; i<m; i++){
+                        var cell2 = row.insertCell(i);
+                        tr = cell2;
+                        cell2.id = "row"+i;
+                        var td = document.createElement('td');
+                        var input = document.createElement('INPUT');
+                        input.type = 'text';
+                        td.appendChild(input);
+                        tr.appendChild(td);
+                        td.style.borderRight = "solid 0px";
+                        td.style.padding = "0px";
+                    }
+                }else{
+                    var cell1 = row.insertCell(0);
+                    cell1.id = "row"+0;
+                    var img = document.createElement('INPUT');
+                    img.type = 'button';
+                    img.value = '🚫';
+                    img.id ="delete-btn";
+                    img.style.marginLeft = "8vw";
+                    cell1.innerHTML = param;
+                    cell1.appendChild(img);
+                }document.getElementById("Add-parameter-frame").style.display = "none";
+                var rowcount = (table.rows.length)-1;
+                // document.getElementById("delete-btn").addEventListener("click", deleteRow(rowcount));
          }
         }
         function addproduct(){
-            document.getElementById("Add-product-frame").style.display = "none";
+            var product = document.getElementById("product").value;
+            if(product === ""){
+                alert("not a valid product");
+            }else{
+                document.getElementById("Add-product-frame").style.display = "none";
             var table = document.getElementById("comparision-table");
             var n = document.getElementById("comparision-table").getElementsByTagName("tr").length;
             var i=0;
-            var product = document.getElementById("product").value;
             const product_name = product.toString().toUpperCase().trim();
             if(n>1){
                 tr = table.getElementsByTagName("tr");
@@ -53,21 +91,18 @@
             }else{
                 alert("Parameter not inserted");
             }
+            }
         }
-        tableDragger(document.querySelector('#event-table'), { mode: 'free', dragHandler: '.handle', onlyBody: true })
-        .on('drag', () => {
-        console.log('drag');
-        })
-        .on('drop', (from, to, el, mode) => {
-        console.log(`drop ${el.nodeName} from ${from} ${mode} to ${to} ${mode}`);
-        })
-        .on('shadowMove', (from, to, el, mode) => {
-        console.log(`move ${el.nodeName} from ${from} ${mode} to ${to} ${mode}`);
-        })
-        .on('out', (el, mode) => {
-        console.log(`move out or drop ${el.nodeName} in mode ${mode}`);
-        });
+//         function deleteRow(r) {
+//             document.getElementById("comparision-table").deleteRow(r);
+// }
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('table').sortable();
+      </script>
 </head>
 <body>
     <div class="main">
@@ -78,6 +113,23 @@
     </div>
     <p id="filenamep" style="color: #707070; margin-top: 2%; margin-left: 3%;">Laptop</p>
     <div style="display: flex; align-items: flex-start;">
+
+        <div class="Add-parameter-frame" id="Add-parameter-frame">
+            <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style=" margin: 1%;" onclick="initclose()"/></div>
+            <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
+                ADD PARAMETER:
+            </p>
+            <input type="text" placeholder="Ex: color" id="parameter"/>
+            <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PARAMETER" onclick="addparamrow()">
+        </div>
+        <div class="Add-product-frame" id="Add-product-frame">
+                <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style="margin: 1%;" onclick="initclose()"/></div>
+                <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
+                    ADD PRODUCT:
+                </p>
+                <input type="text" placeholder="Ex: color" id="product"/>
+                <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct()">
+            </div>
     <table id="comparision-table" style="margin-top: 1%; margin-left: 5%;">
         <tr>
             <th style="border-right:solid 2px #707070; padding: 2vw;">
@@ -87,22 +139,7 @@
     </table>
     <div style="display: flex; align-items: center; margin-top: 3vw;"><span style="margin-right: 5px; margin-left: 10px;"  id="product-name">ADD PRODUCT</span> <img src="../request-icons-10.png" width="20" height="20" onclick="addproduct1()" id="addproductbtn"/></div>
 </div>
-    <div class="Add-parameter-frame" id="Add-parameter-frame">
-        <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style=" margin: 1%;" onclick="initclose()"/></div>
-        <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
-            ADD PARAMETER:
-        </p>
-        <input type="text" placeholder="Ex: color" id="parameter"/>
-        <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PARAMETER" onclick="addparamrow()">
-    </div>
-    <div class="Add-product-frame" id="Add-product-frame">
-            <div style="display: flex; justify-content: flex-end; box-shadow: 0px 0px 1px 0px #70707060;"><img src="../request-icons-13.png" height="25" width="25" style="margin: 1%;" onclick="initclose()"/></div>
-            <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #707070;">
-                ADD PRODUCT:
-            </p>
-            <input type="text" placeholder="Ex: color" id="product"/>
-            <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct()">
-        </div>
+    
     
 
     <div class="bottom-box">
