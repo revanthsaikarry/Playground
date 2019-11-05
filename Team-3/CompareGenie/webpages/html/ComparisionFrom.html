@@ -129,10 +129,11 @@
                 alert("Parameter not inserted");
             }
             }
-                $('.delete-btn-head').click(function(){
-                })
-                $('table').delegate('th','click', function() {
-                 var index = this.cellIndex;
+                // $('.delete-btn-head').click(function(){
+                //    var index = this.parent().cellIndex; 
+                // })
+                $('table').delegate('.delete-btn-head','click', function() {
+                 var index = this.parent().parent().cellIndex;
                 $(this).closest('table').find('tr').each(function() {
                  this.removeChild(this.cells[ index ]);
                 });
