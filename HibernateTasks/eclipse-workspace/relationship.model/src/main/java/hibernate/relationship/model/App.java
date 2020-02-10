@@ -43,10 +43,12 @@ public class App
         std1.setRoll_no(2);
         std1.setStd_name(std_name1);
         std1.setMarks(55);
+
         
         std2.setRoll_no(3);
         std2.setStd_name(std_name2);
         std2.setMarks(45);
+
         
         ltp.setLid(101);
         ltp.setLname("HP");
@@ -56,6 +58,15 @@ public class App
         
         ltp2.setLid(103);
         ltp2.setLname("Lenovo");
+        
+        std.getLaptop().add(ltp);
+        std1.getLaptop().add(ltp1);
+        std2.getLaptop().add(ltp2);
+        
+        ltp.getStudent().add(std);
+        ltp1.getStudent().add(std);
+        ltp2.getStudent().add(std1);
+
         
         Configuration config = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class); 
         

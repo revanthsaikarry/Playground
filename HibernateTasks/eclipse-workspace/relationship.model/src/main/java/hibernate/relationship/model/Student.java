@@ -1,16 +1,22 @@
 package hibernate.relationship.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "STUDENT")
 public class Student {
 	
-	@Id @GeneratedValue
+	@Id
 	@Column(name = "roll_number")
 	private int roll_no;
 	
@@ -20,6 +26,15 @@ public class Student {
 	@Column(name = "marks")
 	private int marks;
 	
+	@ManyToMany(mappedBy = "student")
+	private List<Laptop> laptop = new ArrayList<Laptop>();
+	
+	public List<Laptop> getLaptop() {
+		return laptop;
+	}
+	public void setLaptop(List<Laptop> laptop) {
+		this.laptop = laptop;
+	}
 	public int getRoll_no() {
 		return roll_no;
 	}

@@ -1,16 +1,30 @@
 package hibernate.relationship.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Laptop")
 public class Laptop {
 	
-	@Id 
+	@Id
 	private int Lid;
 	private String Lname;
+	@ManyToMany
+	private List<Student> student = new ArrayList<Student>();
+	
+	public List<Student> getStudent() {
+		return student;
+	}
+	public void setStudent(List<Student> student) {
+		this.student = student;
+	}
 	public int getLid() {
 		return Lid;
 	}
