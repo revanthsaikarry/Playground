@@ -1,0 +1,10 @@
+package hibernate.relationship.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Laptop")
+public class Laptop {
+
+}

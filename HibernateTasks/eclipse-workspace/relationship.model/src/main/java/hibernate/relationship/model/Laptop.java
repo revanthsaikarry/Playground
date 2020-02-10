@@ -1,0 +1,31 @@
+package hibernate.relationship.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Laptop")
+public class Laptop {
+	
+	@Id 
+	private int Lid;
+	private String Lname;
+	public int getLid() {
+		return Lid;
+	}
+	public void setLid(int lid) {
+		Lid = lid;
+	}
+	public String getLname() {
+		return Lname;
+	}
+	public void setLname(String lname) {
+		Lname = lname;
+	}
+	@Override
+	public String toString() {
+		return "Laptop [Lid=" + Lid + ", Lname=" + Lname + "]";
+	}
+	
+}

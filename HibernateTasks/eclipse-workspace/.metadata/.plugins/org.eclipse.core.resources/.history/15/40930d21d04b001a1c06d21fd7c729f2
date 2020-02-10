@@ -1,0 +1,64 @@
+package hibernate.relationship.model;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Student std = new Student();
+        Student std1 = new Student();
+        Student std2 = new Student();
+        
+        Laptop ltp = new Laptop();
+        Laptop ltp1 = new Laptop();
+        Laptop ltp2 = new Laptop();
+        
+        StudentName std_name = new StudentName();
+        StudentName std_name1 = new StudentName();
+        StudentName std_name2 = new StudentName();
+        
+        std_name.setFname("Raj");
+        std_name.setMname("Vihar");
+        std_name.setLname("Hanuma");
+        
+        std_name1.setFname("Ram");
+        std_name1.setMname("manohar");
+        std_name1.setLname("Rao");
+        
+        std_name2.setFname("Vinay");
+        std_name2.setMname("ram");
+        std_name2.setLname("katari");
+        
+        std.setRoll_no(1);
+        std.setStd_name(std_name);
+        std.setMarks(65);
+        
+        std1.setRoll_no(2);
+        std1.setStd_name(std_name1);
+        std1.setMarks(55);
+        
+        std2.setRoll_no(3);
+        std2.setStd_name(std_name2);
+        std2.setMarks(45);
+        
+        ltp.setLid(101);
+        ltp.setLname("HP");
+        
+        ltp1.setLid(102);
+        ltp1.setLname("Dell");
+        
+        ltp2.setLid(103);
+        ltp2.setLname("Lenovo");
+        
+        Configuration config = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class); 
+        
+        SessionFactory sf = config.buildSessionFactory();
+        Session session = sf.openSession();
+    }
+}

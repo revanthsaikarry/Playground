@@ -1,0 +1,5 @@
+package hibernate.relationship.model;
+
+public class StudentName {
+
+}

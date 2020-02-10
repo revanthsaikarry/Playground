@@ -1,0 +1,8 @@
+package hibernate.relationship.model;
+
+public class StudentName {
+	private String Fname;
+	private String mname;
+	private String lname;
+	
+}

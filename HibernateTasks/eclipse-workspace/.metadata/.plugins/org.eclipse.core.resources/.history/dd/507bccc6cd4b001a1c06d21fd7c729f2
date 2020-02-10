@@ -1,0 +1,42 @@
+package hibernate.relationship.model;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        Student std = new Student();
+        Laptop ltp = new Laptop();
+        StudentName std_name = new StudentName();
+        StudentName std_name1 = new StudentName();
+        StudentName std_name2 = new StudentName();
+        
+        std_name.setFname("Raj");
+        std_name.setMname("Vihar");
+        std_name.setLname("Hanuma");
+        
+        std_name1.setFname("Ram");
+        std_name1.setMname("manohar");
+        std_name1.setLname("Rao");
+        
+        std_name2.setFname("Vinay");
+        std_name2.setMname("ram");
+        std_name2.setLname("katari");
+        
+        std.setRoll_no(1);
+        std.setStd_name(std_name);
+        std.setMarks(65);
+        
+        std.setRoll_no(2);
+        std.setStd_name(std_name1);
+        std.setMarks(55);
+        
+        std.setRoll_no(3);
+        std.setStd_name(std_name2);
+        std.setMarks(45);
+        
+    }
+}

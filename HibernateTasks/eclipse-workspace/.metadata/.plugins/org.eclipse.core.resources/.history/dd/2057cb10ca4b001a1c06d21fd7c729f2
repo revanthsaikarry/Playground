@@ -1,0 +1,6 @@
+package hibernate.relationship.model;
+
+public class Student {
+	private int roll_no;
+	private 
+}

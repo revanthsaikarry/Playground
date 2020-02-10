@@ -1,0 +1,10 @@
+
+public class SuperKeywordEx {
+	int num = 100;
+}
+class NewClass extends SuperKeywordEx{
+	int num = 200;
+	public static void main(String args[]) {
+		System.out.println(super.num);
+	}
+}

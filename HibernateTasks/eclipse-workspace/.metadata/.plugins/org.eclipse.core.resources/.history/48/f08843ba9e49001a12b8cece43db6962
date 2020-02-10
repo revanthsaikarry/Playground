@@ -1,0 +1,29 @@
+package hibernate.demo;
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	Employee emp = new Employee();
+    	emp.setEmp_id(101);
+    	emp.setEmp_name("Raj Kumar");
+    	emp.setDob("30-06-1986");
+    	
+    	Configuration con = new Configuration().configure().addAnnotatedClass(Employee.class);
+    	
+    	SessionFactory sf = con.buildSessionFactory();
+    	
+    	Session session = sf.openSession();
+    	session.save(emp);
+    	
+    }
+}

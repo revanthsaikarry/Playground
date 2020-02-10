@@ -1,0 +1,13 @@
+import java.util.*;
+public class AddBinNums {
+	public static void main(String args[]) {
+		long b1, b2;
+		int i=0, carry=0;
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("enter first binary number");
+		b1 = scanner.nextLong();
+		System.out.println("enter second binary number");
+		b2 = scanner.nextLong();
+		scanner.close();
+	}
+}

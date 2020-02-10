@@ -1,0 +1,11 @@
+public class A {
+	int j = 10;
+	A(){
+		int i=100;
+		System.out.println(i+10+"Constructor"+i+10);
+	}
+	public static void main(String args[]) {
+		A a = new A();
+		System.out.print(j);//static variable can be called without using any object
+	}
+}

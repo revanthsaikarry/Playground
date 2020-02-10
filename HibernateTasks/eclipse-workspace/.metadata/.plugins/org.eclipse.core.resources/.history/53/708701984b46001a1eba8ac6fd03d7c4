@@ -1,0 +1,9 @@
+public class A {
+	A(){
+		int i=100;
+		System.out.println(i+10+"Constructor"+i+10);
+	}
+	public static void main(String args[]) {
+		A a = new A();
+	}
+}

@@ -1,0 +1,8 @@
+package hibernate.demo;
+
+
+public class Employee {
+	int emp_id;
+	String emp_name;
+	String dob;
+}
