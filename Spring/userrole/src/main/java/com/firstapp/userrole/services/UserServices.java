@@ -30,8 +30,16 @@ public class UserServices {
 		return dao.findAllById(ids);
 	}
 
+	public String findUserNameById(int id){
+		return dao.findUserNameById(id);
+	}
+	
 	public void deleteById(Integer id) {
 		dao.deleteById(id);
+	}
+	
+	public User update(User user) {
+		return dao.save(user);
 	}
 
 }

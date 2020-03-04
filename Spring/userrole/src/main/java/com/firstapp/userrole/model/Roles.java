@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name = "roles")
 public class Roles {
@@ -20,6 +22,7 @@ public class Roles {
 
 	private String role;
 
+	@JsonBackReference
 	@ManyToMany(mappedBy = "role")
 	private List<User> userList = new ArrayList<>();
 
