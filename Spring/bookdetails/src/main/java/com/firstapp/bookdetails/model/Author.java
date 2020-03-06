@@ -21,8 +21,7 @@ public class Author {
 	private String author_name;
 	private int mobile_no;
 
-	@ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	@JoinColumn(name="book_id")
+	@ManyToOne(cascade = CascadeType.MERGE,fetch = FetchType.LAZY)
 	private Book book;
 
 	public int getAuthor_id() {
